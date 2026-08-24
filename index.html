@@ -498,49 +498,72 @@
     .chart-key .k-g { background: var(--muted); }
     .chart-key .k-w { background: var(--warn); }
   }
+
+  /* ---------- figures simplifiées ---------- */
+  .fig-fog { fill: var(--ink); opacity: .13; }
+  .fig-lid { stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
+  .fig-ground { fill: var(--ink); opacity: .09; }
+  .fig-ground-line { fill: none; stroke: var(--line-strong); stroke-width: 1.4; stroke-linejoin: round; }
+  .fig-sun { fill: none; stroke: var(--warn); stroke-width: 1.6; }
+  .fig-axis { stroke: var(--line-strong); stroke-width: 1; }
+  .fig-track { fill: var(--ink); opacity: .07; }
+  .fig-bar-s { fill: var(--sappey); opacity: .8; }
+  .fig-bar-v { fill: var(--veurey); opacity: .8; }
+  .fig-dot-s { fill: var(--sappey); }
+  .fig-dot-v { fill: var(--veurey); }
+  .fig-tick { font-family: var(--mono); font-size: 13px; fill: var(--muted); }
+  .fig-note { font-family: var(--mono); font-size: 12px; fill: var(--muted); }
+  .fig-name { font-family: var(--sans); font-size: 15px; font-weight: 600; }
+  .fig-name.s { fill: var(--sappey); }
+  .fig-name.v { fill: var(--veurey); }
+
+  /* ---------- blocs « choisir » ---------- */
+  .choose { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+  .card.n .place { color: var(--muted); }
+  .card .verdict-line { font-family: var(--sans); font-weight: 600; font-size: 1rem; line-height: 1.3; }
+
+  /* ---------- matrice « à sa porte » ---------- */
+  td .away { display: block; font-family: var(--mono); font-size: .74rem; color: var(--muted); margin-top: .2rem; }
 </style>
 </head>
 <body>
 
-
 <div class="page">
 
   <header class="masthead">
-    <div class="kicker">Rapport comparatif · Vélotaf vers la gare de Grenoble</div>
+    <div class="kicker">Comparatif · aller travailler à vélo jusqu'à la gare de Grenoble</div>
     <h1>Le Sappey ou Veurey-Voroize</h1>
-    <p class="standfirst">Deux communes de la métropole grenobloise, deux façons très différentes d'aller travailler à vélo électrique jusqu'à la gare. La question n'est pas « est-ce possible » — ça l'est dans les deux cas. Elle est : combien de jours par an — et à quel prix, y compris en qualité de vie.</p>
+    <p class="standfirst">Deux villages de la métropole grenobloise, à un quart d'heure de voiture l'un de l'autre, et deux vies quotidiennes qui n'ont presque rien en commun. Ce document compare ce qui compte vraiment : le trajet, le climat, ce qu'on a à sa porte, et le budget.</p>
     <div class="byline">
       <span>Août 2026</span>
-      <span>Sources publiques, vérifiées une à une</span>
-      <span>Estimations signalées comme telles</span>
+      <span>Sources publiques</span>
+      <span>Les estimations sont signalées comme telles</span>
     </div>
   </header>
 
   <section id="verdict">
     <div class="verdict">
-      <div class="kicker">En une phrase</div>
-      <p class="answer">Veurey-Voroize permet un vélotaf toute l'année ; Le Sappey-en-Chartreuse permet un vélotaf de belle saison.</p>
-      <p>Les deux trajets prennent presque exactement le même temps — environ 1 h 20 à 1 h 35 aller-retour. Ce n'est donc pas le chronomètre qui départage, mais la fiabilité : à Veurey le vélo est un mode de transport, au Sappey c'est un choix de beau temps qui exige un plan B assumé quatre mois par an.</p>
-      <p>Ce plan B n'est pas neutre : au Sappey, il suppose une voiture équipée pour la montagne à l'année. À Veurey, il suppose un titre de transport. C'est probablement le plus gros écart de coût entre les deux communes, et il n'apparaît sur aucune annonce immobilière.</p>
-      <p>Si le vélo quotidien est un critère de choix du logement, Veurey. Si c'est le cadre de vie en montagne qui prime et que le vélo reste un plaisir d'avril à octobre, Le Sappey se défend très bien — mais il faut le décider en connaissance de cause, pas le découvrir en novembre.</p>
+      <div class="kicker">La réponse en deux lignes</div>
+      <p class="answer">À Veurey, le vélo est un moyen de transport toute l'année. Au Sappey, c'est un plaisir de belle saison.</p>
+      <p>Les deux trajets durent presque le même temps : une heure et demie aller-retour. Ce n'est donc pas la durée qui départage, c'est la régularité. Quatre mois par an, au Sappey, il faut une solution de rechange — et cette solution s'appelle la voiture.</p>
+      <p>Mais on ne choisit pas un trajet, on choisit un endroit où vivre. Et là, Le Sappey reprend l'avantage : de la lumière en hiver, cinq degrés de moins en été, le ski et la montagne au bout de la rue. Veurey offre le plat, les services de la vallée et un loyer plus léger. Le reste de ce document sert à peser ces deux plateaux.</p>
     </div>
   </section>
 
   <nav class="toc" aria-label="Sommaire">
     <div class="kicker">Sommaire</div>
     <ol>
-      <li><a href="#denivele"><span class="n">01</span><span class="t">800 mètres de dénivelé, ou aucun</span></a></li>
-      <li><a href="#chiffres"><span class="n">02</span><span class="t">Ce que chaque trajet demande</span></a></li>
-      <li><a href="#batterie"><span class="n">03</span><span class="t">La batterie n'est pas le problème</span></a></li>
-      <li><a href="#hiver"><span class="n">04</span><span class="t">La neige, le verglas et la nuit</span></a></li>
-      <li><a href="#route"><span class="n">05</span><span class="t">Une route partagée contre une voie verte</span></a></li>
-      <li><a href="#planb"><span class="n">06</span><span class="t">Les jours où le vélo est exclu</span></a></li>
-      <li><a href="#repli"><span class="n">07</span><span class="t">La voiture au Sappey, le train à Veurey</span></a></li>
-      <li><a href="#pratique"><span class="n">08</span><span class="t">Stationnement et équipement</span></a></li>
-      <li><a href="#qualite"><span class="n">09</span><span class="t">Deux quotidiens qui n'ont rien en commun</span></a></li>
-      <li><a href="#reserves"><span class="n">10</span><span class="t">Ce que ce rapport n'a pas pu vérifier</span></a></li>
-      <li><a href="#reco"><span class="n">11</span><span class="t">Et une troisième option</span></a></li>
-      <li><a href="#sources"><span class="n">—</span><span class="t">Références consultées</span></a></li>
+      <li><a href="#denivele"><span class="n">01</span><span class="t">800 mètres, ou aucun</span></a></li>
+      <li><a href="#trajet"><span class="n">02</span><span class="t">Le trajet, côte à côte</span></a></li>
+      <li><a href="#annee"><span class="n">03</span><span class="t">L'année en un coup d'œil</span></a></li>
+      <li><a href="#planb"><span class="n">04</span><span class="t">Les jours sans vélo</span></a></li>
+      <li><a href="#porte"><span class="n">05</span><span class="t">Ce qu'on a à sa porte</span></a></li>
+      <li><a href="#faire"><span class="n">06</span><span class="t">Ce qu'on peut y faire</span></a></li>
+      <li><a href="#climat"><span class="n">07</span><span class="t">Le climat, l'argument caché</span></a></li>
+      <li><a href="#budget"><span class="n">08</span><span class="t">Ce que ça coûte</span></a></li>
+      <li><a href="#choisir"><span class="n">09</span><span class="t">Comment choisir</span></a></li>
+      <li><a href="#verifier"><span class="n">10</span><span class="t">À vérifier sur place</span></a></li>
+      <li><a href="#sources"><span class="n">—</span><span class="t">Sources</span></a></li>
     </ol>
   </nav>
 
@@ -549,18 +572,17 @@
   <section id="denivele">
     <div class="head">
       <div class="kicker"><span class="num">01</span>Le fait qui décide</div>
-      <h2>800 mètres de dénivelé, ou aucun</h2>
+      <h2>800 mètres, ou aucun</h2>
     </div>
     <div class="col">
-      <p>Tout le reste découle de ce graphique. Les deux profils sont tracés à la même échelle verticale, depuis le même point de départ : la gare de Grenoble, à 213 m d'altitude.</p>
+      <p>Les deux villages sont à peu près à la même distance de la gare. Toute la différence tient dans ce dessin.</p>
     </div>
 
     <figure>
       <div class="chart-frame">
         <svg viewBox="0 0 1000 340" role="img" aria-labelledby="profil-title profil-desc">
-          <title id="profil-title">Profils altimétriques comparés depuis la gare de Grenoble</title>
-          <desc id="profil-desc">Le trajet vers Le Sappey-en-Chartreuse monte de 213 m à 1 014 m en 15 km, en passant par le col de Vence ; celui vers Veurey-Voroize reste plat autour de 200 m sur 17,5 km.</desc>
-          <!-- grilles horizontales -->
+          <title id="profil-title">Le relief des deux trajets depuis la gare de Grenoble</title>
+          <desc id="profil-desc">Le trajet vers Le Sappey-en-Chartreuse monte de 213 m à 1 014 m en 15 km ; celui vers Veurey-Voroize reste plat autour de 200 m sur 17,5 km.</desc>
           <line class="grid-line" x1="70" y1="275.6" x2="970" y2="275.6"></line>
           <line class="grid-line" x1="70" y1="217.8" x2="970" y2="217.8"></line>
           <line class="grid-line" x1="70" y1="160.0" x2="970" y2="160.0"></line>
@@ -573,15 +595,12 @@
           <text class="tick-label" x="60" y="48.4" text-anchor="end">1000</text>
           <text class="tick-label" x="60" y="26" text-anchor="end">m</text>
 
-          <!-- aires -->
           <path class="area-sappey" d="M70,271.8 L195,270.4 L270,259.7 L345,235.1 L420,206.2 L495,175.9 L570,145.6 L640,107.4 L720,79.1 L770,58.9 L820,40.4 L820,290 L70,290 Z"></path>
           <path class="area-veurey" d="M70,271.8 L220,272.7 L370,273.3 L520,274.1 L670,274.7 L820,275.6 L945,276.1 L945,290 L70,290 Z"></path>
 
-          <!-- lignes -->
           <path class="line-sappey" d="M70,271.8 L195,270.4 L270,259.7 L345,235.1 L420,206.2 L495,175.9 L570,145.6 L640,107.4 L720,79.1 L770,58.9 L820,40.4"></path>
           <path class="line-veurey" d="M70,271.8 L220,272.7 L370,273.3 L520,274.1 L670,274.7 L820,275.6 L945,276.1"></path>
 
-          <!-- axe des abscisses -->
           <line class="axis-line" x1="70" y1="290" x2="970" y2="290"></line>
           <text class="tick-label" x="70" y="309" text-anchor="middle">0</text>
           <text class="tick-label" x="320" y="309" text-anchor="middle">5</text>
@@ -589,206 +608,101 @@
           <text class="tick-label" x="820" y="309" text-anchor="middle">15</text>
           <text class="tick-label" x="948" y="309" text-anchor="middle">km</text>
 
-          <!-- points et étiquettes -->
           <circle class="dot-start" cx="70" cy="271.8" r="4"></circle>
           <text class="tick-label" x="78" y="256">Gare de Grenoble · 213 m</text>
 
-          <circle class="dot-sappey" cx="640" cy="107.4" r="4"></circle>
-          <text class="tick-label" x="628" y="99" text-anchor="end">Col de Vence · 782 m</text>
-
           <circle class="dot-sappey" cx="820" cy="40.4" r="5"></circle>
-          <text class="series-label label-sappey" x="810" y="33" text-anchor="end">Le Sappey-en-Chartreuse · 1 014 m</text>
+          <text class="series-label label-sappey" x="810" y="33" text-anchor="end">Le Sappey · 1 014 m</text>
 
           <circle class="dot-veurey" cx="945" cy="276.1" r="5"></circle>
           <text class="series-label label-veurey" x="935" y="262" text-anchor="end">Veurey-Voroize · 198 m</text>
         </svg>
         <div class="chart-key">
-          <div><i class="k-g"></i><span>Départ : gare de Grenoble, 213 m — 0 km</span></div>
-          <div><i class="k-s"></i><span>Le Sappey-en-Chartreuse, 1 014 m — 15 km, via le col de Vence (782 m)</span></div>
-          <div><i class="k-v"></i><span>Veurey-Voroize, 198 m — 17,5 km, sans dénivelé</span></div>
+          <div><i class="k-g"></i><span>Départ : gare de Grenoble, 213 m</span></div>
+          <div><i class="k-s"></i><span>Le Sappey, 1 014 m — 15 km de montée</span></div>
+          <div><i class="k-v"></i><span>Veurey-Voroize, 198 m — 17,5 km de plat</span></div>
         </div>
       </div>
-      <figcaption>Altitudes de référence : gare de Grenoble 213 m, col de Vence 782 m, Le Sappey 1 014 m, Veurey-Voroize 198 m. Le profil du Sappey est reconstitué à partir des données de la montée du col de Vence depuis Grenoble (9,4 km, 571 m de dénivelé, 6,07 % de moyenne, 10,1 % au maximum) prolongée jusqu'au village ; le tracé intermédiaire est lissé et donne l'allure générale, pas la pente kilomètre par kilomètre.</figcaption>
+      <figcaption>Le tracé du Sappey est reconstitué à partir du profil connu de la montée du col de Vence : il donne l'allure générale, pas la pente kilomètre par kilomètre.</figcaption>
     </figure>
+
+    <div class="col">
+      <p>Le Sappey est perché à 1 014 m, la gare est à 213 m. Entre les deux, une route de montagne qui grimpe pendant 15 km. Veurey est à 198 m : le trajet est plat de bout en bout, le long de l'Isère.</p>
+    </div>
   </section>
 
   <hr class="rule">
 
-  <section id="chiffres">
+  <section id="trajet">
     <div class="head">
-      <div class="kicker"><span class="num">02</span>Les chiffres côte à côte</div>
-      <h2>Ce que chaque trajet demande</h2>
+      <div class="kicker"><span class="num">02</span>L'essentiel</div>
+      <h2>Le trajet, côte à côte</h2>
     </div>
 
     <div class="table-wrap">
       <table>
-        <caption>Trajet domicile → gare de Grenoble, aller simple</caption>
+        <caption>De chez soi à la gare de Grenoble, aller simple</caption>
         <thead>
           <tr>
-            <th scope="col">Critère</th>
-            <th scope="col">Le Sappey-en-Chartreuse</th>
+            <th scope="col"></th>
+            <th scope="col">Le Sappey</th>
             <th scope="col">Veurey-Voroize</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Altitude de la commune</th>
-            <td class="num">1 014 m</td>
-            <td class="num">198 m</td>
-          </tr>
-          <tr>
-            <th scope="row">Distance vers la gare</th>
-            <td class="num">≈ 15 km</td>
-            <td class="num">≈ 16–18 km <span style="color:var(--muted)">(estimé)</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Dénivelé positif</th>
-            <td class="num">≈ 800 m</td>
-            <td class="num">quasi nul (± 20 m)</td>
-          </tr>
-          <tr>
-            <th scope="row">Itinéraire</th>
-            <td>RD512 (route de Chartreuse), route partagée, aucun aménagement cyclable sur la montée</td>
-            <td>Voie verte en site propre le long des digues de l'Isère — enrobé lisse de 3 m, jalonnée</td>
-          </tr>
-          <tr>
-            <th scope="row">Temps le matin</th>
-            <td class="num">25–35 min (descente)</td>
-            <td class="num">40–50 min</td>
-          </tr>
-          <tr>
-            <th scope="row">Temps le soir</th>
-            <td class="num">45–60 min en VAE</td>
-            <td class="num">40–50 min</td>
-          </tr>
-          <tr>
-            <th scope="row">Assistance électrique</th>
-            <td>Indispensable</td>
-            <td>Confort, pas nécessaire</td>
-          </tr>
-          <tr>
-            <th scope="row">Consommation batterie / jour</th>
-            <td class="num">250–350 Wh → recharge quotidienne</td>
-            <td class="num">≈ 100 Wh → recharge 1–2 ×/semaine</td>
-          </tr>
-          <tr>
-            <th scope="row">Saison réellement praticable</th>
-            <td class="num">≈ 7 mois pleins</td>
-            <td class="num">12 mois</td>
-          </tr>
-          <tr>
-            <th scope="row">Desserte de secours</th>
-            <td>Bus 62 — 8 courses par jour</td>
-            <td>Lignes M réso 20 et 51, car Région T60, gare TER de Voreppe à proximité</td>
-          </tr>
-          <tr>
-            <th scope="row">Repli les jours sans vélo</th>
-            <td>Voiture — équipements hivernaux obligatoires du 1<sup>er</sup> nov. au 31 mars</td>
-            <td>Bus + tram, ou TER depuis Voreppe (9 min jusqu'à Grenoble)</td>
-          </tr>
-          <tr>
-            <th scope="row">Population (2023)</th>
-            <td class="num">1 191 hab.</td>
-            <td class="num">1 427 hab.</td>
-          </tr>
+          <tr><th scope="row">Distance</th><td class="num">≈ 15 km</td><td class="num">≈ 16–18 km <span style="color:var(--muted)">(estimé)</span></td></tr>
+          <tr><th scope="row">Montée</th><td class="num">800 m</td><td class="num">aucune</td></tr>
+          <tr><th scope="row">Le matin</th><td class="num">25–35 min <span style="color:var(--muted)">(ça descend)</span></td><td class="num">40–50 min</td></tr>
+          <tr><th scope="row">Le soir</th><td class="num">45–60 min <span style="color:var(--muted)">(vélo électrique)</span></td><td class="num">40–50 min</td></tr>
+          <tr><th scope="row">La route</th><td>Route de montagne partagée avec les voitures, sans piste cyclable</td><td>Voie verte séparée du trafic, bitume lisse, le long de l'Isère</td></tr>
+          <tr><th scope="row">Vélo électrique</th><td>Indispensable, et à recharger tous les soirs</td><td>Agréable, pas obligatoire</td></tr>
+          <tr><th scope="row">Mois où le vélo tient</th><td class="num">≈ 7 sur 12</td><td class="num">12 sur 12</td></tr>
+          <tr><th scope="row">Les autres jours</th><td>La voiture</td><td>Bus, tram ou train</td></tr>
+          <tr><th scope="row">Habitants</th><td class="num">1 191</td><td class="num">1 427</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="col">
-      <p>Le point qui surprend au premier examen : <strong>le temps de trajet est presque identique</strong>. La descente matinale du Sappey est rapide, mais la remontée du soir efface l'avantage, et les 17 km de plat de Veurey se parcourent à vitesse constante. Sur une semaine, l'écart se compte en minutes.</p>
+      <p>Le point qui surprend : <strong>le temps de trajet est presque le même</strong>. La descente du matin est rapide au Sappey, mais la remontée du soir efface l'avance. Sur une semaine, l'écart se compte en minutes.</p>
     </div>
   </section>
 
   <hr class="rule">
 
-  <section id="batterie">
+  <section id="annee">
     <div class="head">
-      <div class="kicker"><span class="num">03</span>Autonomie</div>
-      <h2>La batterie n'est pas le problème</h2>
+      <div class="kicker"><span class="num">03</span>Le calendrier</div>
+      <h2>L'année en un coup d'œil</h2>
     </div>
     <div class="col">
-      <p>Monter 800 m avec un ensemble vélo + cycliste + sacoche d'environ 100 kg représente à peu près 220 Wh de travail mécanique utile. En ajoutant les résistances au roulement et à l'air, et en tenant compte du rendement du moteur, la montée du soir consomme de l'ordre de <strong>250 à 350 Wh</strong> — soit une charge par jour.</p>
-      <p>Une batterie de 500 Wh passe donc, avec de la marge. Une batterie de 625 à 750 Wh est plus confortable, d'autant que le froid fait perdre 20 à 30 % de capacité en hiver. Et si la recharge est possible sur le lieu de travail, le sujet disparaît complètement.</p>
-      <p>À Veurey, sur le plat, la même journée consomme environ <strong>100 Wh</strong> : n'importe quelle batterie tient la semaine.</p>
-      <div class="note">
-        <span class="tag">Estimation</span>
-        Ces valeurs sont calculées, pas mesurées. Elles supposent une assistance modérée et un moteur pédalier de qualité. Un moteur de roue avant d'entrée de gamme sur 800 m de dénivelé consommera sensiblement plus et chauffera.
-      </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <section id="hiver">
-    <div class="head">
-      <div class="kicker"><span class="num">04</span>Hiver</div>
-      <h2>La neige n'est pas le vrai risque — le verglas l'est</h2>
-    </div>
-    <div class="col">
-      <p>Le Sappey est une petite station de ski, mais les chutes de neige marquées y restent limitées : les relevés de la station donnent une moyenne d'environ <strong>38 cm de neige par saison sur ~6 jours d'enneigement</strong> entre 2012 et 2022, avec de fortes variations — 101 cm en 2017-2018, quasiment rien en 2012-2013. La RD512 est déneigée par la Métropole, et la commune traite le village.</p>
-      <p>Le danger n'est donc pas la neige tassée : c'est <strong>le verglas au petit matin sur une descente de 800 m à l'ombre</strong>, entre décembre et mars. Des pneus cloutés aident sur le plat ; ils ne sauvent pas dans une descente longue à 8 %. À quoi s'ajoute le fait que, de novembre à février, les deux trajets se font de nuit.</p>
-      <p>En fond de vallée, à Veurey, le paramètre hivernal change de nature. Grenoble compte environ <strong>67 jours de gel par an</strong> et 981 mm de précipitations, avec une minimale moyenne de −1,3 °C en janvier : il gèle, mais la neige tient rarement au sol. Les contraintes deviennent le froid humide, le brouillard de vallée et l'obscurité — gênantes, pas disqualifiantes.</p>
+      <p>Ce n'est pas la neige qui pose problème : il en tombe peu — environ 38 cm par hiver au Sappey, sur six jours — et la route est déneigée. Le vrai risque, c'est <strong>le verglas du petit matin dans une descente de 800 mètres</strong>, de décembre à mars. En fond de vallée, à Veurey, il gèle aussi, mais la neige tient rarement au sol : restent le froid humide et le brouillard.</p>
     </div>
 
     <div class="season">
       <div class="season-row">
-        <div class="season-name name-sappey">Le Sappey — praticabilité estimée</div>
+        <div class="season-name name-sappey">Le Sappey</div>
         <div class="months">
           <div class="m no">jan</div><div class="m no">fév</div><div class="m watch">mar</div><div class="m ok">avr</div><div class="m ok">mai</div><div class="m ok">juin</div><div class="m ok">juil</div><div class="m ok">août</div><div class="m ok">sep</div><div class="m ok">oct</div><div class="m watch">nov</div><div class="m no">déc</div>
         </div>
       </div>
       <div class="season-row">
-        <div class="season-name name-veurey">Veurey-Voroize — praticabilité estimée</div>
+        <div class="season-name name-veurey">Veurey-Voroize</div>
         <div class="months">
           <div class="m watch">jan</div><div class="m watch">fév</div><div class="m ok">mar</div><div class="m ok">avr</div><div class="m ok">mai</div><div class="m ok">juin</div><div class="m ok">juil</div><div class="m ok">août</div><div class="m ok">sep</div><div class="m ok">oct</div><div class="m ok">nov</div><div class="m watch">déc</div>
         </div>
       </div>
       <div class="legend">
-        <span><span class="swatch ok"></span> Praticable</span>
-        <span><span class="swatch watch"></span> Vigilance — dépend de la météo du jour</span>
-        <span><span class="swatch no"></span> Peu praticable — plan B nécessaire</span>
+        <span><span class="swatch ok"></span> Le vélo passe</span>
+        <span><span class="swatch watch"></span> Ça dépend du jour</span>
+        <span><span class="swatch no"></span> Il faut un plan B</span>
       </div>
     </div>
 
     <div class="col">
       <div class="note">
-        <span class="tag">Lecture</span>
-        Ce calendrier est une appréciation raisonnée à partir des données d'enneigement, d'altitude et d'ensoleillement, pas une statistique publiée. Une année douce déplace la limite d'un mois ; une année froide aussi, dans l'autre sens.
-      </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <section id="route">
-    <div class="head">
-      <div class="kicker"><span class="num">05</span>Route et trafic</div>
-      <h2>Une route partagée contre une voie verte</h2>
-    </div>
-
-    <div class="duo">
-      <div class="card s">
-        <div class="place">Le Sappey · RD512</div>
-        <p>C'est <strong>l'accès principal à la Chartreuse</strong> — col de Porte, Saint-Pierre, les stations — et pas une simple desserte de village. Elle supporte donc un trafic de transit, très marqué le week-end en saison de ski.</p>
-        <ul>
-          <li>Aucun aménagement cyclable sur la montée.</li>
-          <li>Route étroite, parapets par endroits, portion urbaine chargée à Corenc.</li>
-          <li>Les cyclistes qui la fréquentent décrivent une grimpée régulière « où il faut faire attention au trafic ».</li>
-          <li>Point favorable : c'est un col d'entraînement classique de Grenoble, les automobilistes locaux sont habitués aux vélos.</li>
-        </ul>
-        <p>Alternative à connaître : la montée par le <strong>col de Clémencière (D57)</strong>, plus raide mais nettement moins fréquentée, qui rejoint la RD512 vers le col de Vence.</p>
-      </div>
-
-      <div class="card v">
-        <div class="place">Veurey · voie verte V63/V64</div>
-        <p>Le trajet emprunte la <strong>véloroute des digues de l'Isère</strong>, en site propre, sur un revêtement en enrobé lisse de 3 m de large — le même axe qui se poursuit ensuite jusqu'au Drac et à Pont-de-Claix, soit 30 km continus.</p>
-        <ul>
-          <li>Séparation nette du trafic automobile sur l'essentiel du parcours.</li>
-          <li>Signalisation directionnelle en place, aire de repos avec point d'eau.</li>
-          <li>Quelques tronçons au statut « semi-officiel » selon l'AF3V, sans conséquence pratique sur cette section.</li>
-          <li>Revers du décor : fond de vallée, A48 et RD1532 à proximité, zones d'activité.</li>
-        </ul>
+        <span class="tag">À lire comme un ordre de grandeur</span>
+        Ce calendrier est une appréciation raisonnée à partir de l'enneigement, de l'altitude et de la durée du jour — pas une statistique publiée. Une année douce déplace la limite d'un mois, une année froide aussi, dans l'autre sens. Et de novembre à février, on part et on rentre de nuit dans les deux cas.
       </div>
     </div>
   </section>
@@ -797,441 +711,318 @@
 
   <section id="planb">
     <div class="head">
-      <div class="kicker"><span class="num">06</span>Plan B</div>
-      <h2>Ce qui se passe les jours où le vélo est exclu</h2>
+      <div class="kicker"><span class="num">04</span>Plan B</div>
+      <h2>Les jours sans vélo</h2>
     </div>
     <div class="col">
-      <p>C'est là que l'écart se creuse le plus, et c'est le point le plus sous-estimé au moment de choisir un logement.</p>
-      <p><strong>Depuis Le Sappey</strong>, la ligne 62 (Grenoble – Le Sappey – Sarcenas) propose <strong>8 courses par jour</strong> en semaine, premier départ à 7 h 09, dernier à 18 h 04, environ 24 minutes jusqu'à Notre-Dame – Musée, puis correspondance tram jusqu'à la gare. Cela couvre des horaires de bureau classiques, mais sans souplesse : rater le dernier bus n'est pas un incident anodin. La commune complète avec une aire de covoiturage, un groupe d'autostop local, de l'autopartage Citiz et des taxis.</p>
-      <p><strong>Depuis Veurey</strong>, on est sur un réseau urbain normal : ligne 20 vers Sassenage et Seyssinet avec correspondance tram, ligne 51 vers Saint-Égrève, car Région T60, et la gare TER de Voreppe à proximité. Les fréquences exactes sont à vérifier sur reso-m.fr, mais l'ordre de grandeur n'a rien à voir avec 8 courses quotidiennes.</p>
-      <p>Un signe qui ne trompe pas : la page « Se déplacer » de la mairie du Sappey liste le bus, le covoiturage, l'autopartage et les taxis — <strong>et ne mentionne pas le vélo du tout</strong>.</p>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <section id="repli">
-    <div class="head">
-      <div class="kicker"><span class="num">07</span>Hiver, en pratique</div>
-      <h2>La voiture au Sappey, le train à Veurey</h2>
-    </div>
-    <div class="col">
-      <p>Le bus ne suffit pas à décrire la solution de repli réelle. Chaque commune en a une qui lui est propre, et elles ne coûtent pas la même chose.</p>
-    </div>
-
-    <div class="duo">
-      <div class="card s">
-        <div class="place">Le Sappey · la voiture</div>
-        <p>C'est le repli par défaut de décembre à mars, et il vient avec ses propres contraintes.</p>
-        <ul>
-          <li><strong>Équipements hivernaux obligatoires</strong> du 1<sup>er</sup> novembre au 31 mars : la commune est intégralement comprise dans le périmètre de la loi Montagne. Pneus hiver ou chaînes à bord, sans exception.</li>
-          <li><strong>Trajet direct jusqu'à la gare</strong> : environ 15 km, 25 à 35 minutes selon l'entrée dans Grenoble, avec un stationnement quotidien à payer en centre-ville.</li>
-          <li><strong>La variante intelligente</strong> : descendre au P+R Grand&nbsp;Sablon, à La Tronche, au pied même de la montée, puis prendre le tram B — un passage toutes les 4 à 5 minutes de 7 h à 19 h, terminus gare de Grenoble. Le parc relais est ouvert du lundi au samedi de 7 h à 20 h, et la quasi-totalité des P+R de l'agglomération sont en accès libre.</li>
-          <li><strong>ZFE</strong> : Grenoble et La Tronche comptent parmi les 13 communes de la zone à faibles émissions, active du lundi au vendredi de 7 h à 19 h. Les Crit'Air 3 y sont interdits depuis le 1<sup>er</sup> janvier 2025, avec une période pédagogique sans verbalisation jusqu'au 30 juin 2027. Au-delà, il faudra un Crit'Air 2 ou mieux.</li>
-        </ul>
-      </div>
-
-      <div class="card v">
-        <div class="place">Veurey · le train</div>
-        <p>Le TER existe et il est rapide, mais il est moins évident sur le terrain que sur une carte.</p>
-        <ul>
-          <li><strong>Voreppe → Grenoble en 9 minutes</strong> en service direct : c'est le trajet le plus rapide de tout ce rapport, tous modes confondus.</li>
-          <li><strong>Mais la gare de Voreppe se mérite.</strong> Elle est à environ 5 km à vol d'oiseau de Veurey et près de 12 km par la route, parce qu'il faut traverser l'Isère — soit une vingtaine de minutes en voiture, ou de l'ordre de 40 minutes à vélo. Le train ne se prend pas à pied depuis Veurey.</li>
-          <li><strong>Le rabattement à vélo est prévu</strong> : la gare de Voreppe propose un abri vélo collectif accessible avec un abonnement TER + VÉLO, ainsi qu'un parking voiture. La gare de Saint-Égrève – Saint-Robert, sur le même axe, offre des casiers vélo individuels et de l'autopartage Citiz, mais elle est à une quinzaine de kilomètres par la route.</li>
-          <li><strong>Un abonnement combiné M réso / SNCF TER</strong> permet de cumuler train régional et réseau urbain sur un seul titre.</li>
-        </ul>
-        <p>En pratique, le repli le plus simple depuis Veurey reste le bus 20 avec correspondance tram. Le train devient intéressant si le trajet passe de toute façon par la voiture jusqu'à Voreppe, ou pour un rabattement à vélo de beaux jours.</p>
-      </div>
-    </div>
-
-    <div class="col">
-      <p>La différence de fond tient en une phrase : <strong>au Sappey, le plan B suppose de posséder une voiture ; à Veurey, non.</strong> Une voiture équipée pour la montagne, entretenue toute l'année, assurée toute l'année, mais réellement nécessaire quatre mois sur douze — c'est un coût fixe considérable qui n'apparaît sur aucune carte et sur aucune annonce immobilière.</p>
-      <p>À Veurey, le repli est un titre de transport. Au Sappey, c'est un véhicule.</p>
+      <p>C'est là que l'écart se creuse le plus, et c'est le point qu'on oublie le plus souvent en visitant un logement.</p>
     </div>
 
     <figure>
-      <div class="chart-frame hide-sm">
-        <svg viewBox="0 0 880 560" role="img" aria-labelledby="arbre-title arbre-desc">
-          <title id="arbre-title">Arbre de décision d'un matin d'hiver au Sappey</title>
-          <desc id="arbre-desc">Arbre de décision : en cas de verglas ou de neige sur la descente, la voiture jusqu'au parc relais Grand Sablon puis le tram B ; sinon, en cas de pluie forte ou de nuit sans visibilité, le bus 62 ; sinon, le vélo, en vingt-cinq à trente-cinq minutes de descente.</desc>
-          <defs>
-            <marker id="arbre-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-              <polygon class="mk-default" points="0 0, 8 3, 0 6"></polygon>
-            </marker>
-            <marker id="arbre-arrow-focal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-              <polygon class="mk-focal" points="0 0, 8 3, 0 6"></polygon>
-            </marker>
-          </defs>
+      <div class="chart-frame">
+        <svg viewBox="0 0 900 200" role="img" aria-labelledby="bus-title bus-desc">
+          <title id="bus-title">Offre de transport en commun sur une journée</title>
+          <desc id="bus-desc">Depuis Le Sappey, huit bus par jour entre 7 h 09 et 18 h 04. Depuis Veurey, un réseau urbain avec des passages réguliers toute la journée.</desc>
 
-          <!-- connecteurs, tracés avant les boîtes -->
-          <line class="dg-edge" x1="280" y1="72" x2="280" y2="108" marker-end="url(#arbre-arrow)"></line>
-          <line class="dg-edge" x1="440" y1="176" x2="596" y2="176" marker-end="url(#arbre-arrow)"></line>
-          <line class="dg-edge" x1="280" y1="240" x2="280" y2="284" marker-end="url(#arbre-arrow)"></line>
-          <line class="dg-edge" x1="440" y1="352" x2="596" y2="352" marker-end="url(#arbre-arrow)"></line>
-          <line class="dg-edge-focal" x1="280" y1="416" x2="280" y2="460" marker-end="url(#arbre-arrow-focal)"></line>
+          <rect class="fig-track" x="70" y="52" width="790" height="26" rx="4"></rect>
+          <rect class="fig-track" x="70" y="112" width="790" height="26" rx="4"></rect>
 
-          <!-- étiquettes des branches -->
-          <rect class="dg-mask" x="492" y="146" width="40" height="16"></rect>
-          <text class="dg-edgelabel" x="512" y="158" text-anchor="middle">OUI</text>
-          <rect class="dg-mask" x="292" y="252" width="44" height="16"></rect>
-          <text class="dg-edgelabel" x="296" y="264">NON</text>
-          <rect class="dg-mask" x="492" y="322" width="40" height="16"></rect>
-          <text class="dg-edgelabel" x="512" y="334" text-anchor="middle">OUI</text>
-          <rect class="dg-mask" x="292" y="428" width="44" height="16"></rect>
-          <text class="dg-edgelabel" x="296" y="440">NON</text>
+          <rect class="fig-bar-v" x="98" y="112" width="734" height="26" rx="4"></rect>
 
-          <!-- départ -->
-          <rect class="dg-node" x="144" y="24" width="272" height="48" rx="20"></rect>
-          <text class="dg-label" x="280" y="53" text-anchor="middle">7 h — un matin d'hiver au Sappey</text>
+          <circle class="fig-dot-s" cx="135" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="223" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="311" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="398" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="486" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="574" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="662" cy="65" r="7"></circle>
+          <circle class="fig-dot-s" cx="750" cy="65" r="7"></circle>
 
-          <!-- décision 1 -->
-          <polygon class="dg-decision" points="280,112 440,176 280,240 120,176"></polygon>
-          <text class="dg-label" x="280" y="172" text-anchor="middle">Verglas ou neige</text>
-          <text class="dg-label" x="280" y="188" text-anchor="middle">sur la descente ?</text>
+          <text class="fig-name s" x="70" y="42">Le Sappey · 8 bus par jour</text>
+          <text class="fig-name v" x="70" y="102">Veurey · réseau urbain, passages réguliers</text>
 
-          <rect class="dg-node" x="600" y="152" width="264" height="48"></rect>
-          <text class="dg-label" x="732" y="173" text-anchor="middle">Voiture jusqu'au P+R Grand Sablon,</text>
-          <text class="dg-label" x="732" y="189" text-anchor="middle">puis tram B</text>
-
-          <!-- décision 2 -->
-          <polygon class="dg-decision" points="280,288 440,352 280,416 120,352"></polygon>
-          <text class="dg-label" x="280" y="348" text-anchor="middle">Pluie forte ou nuit</text>
-          <text class="dg-label" x="280" y="364" text-anchor="middle">sans visibilité ?</text>
-
-          <rect class="dg-node" x="600" y="328" width="264" height="48"></rect>
-          <text class="dg-label" x="732" y="349" text-anchor="middle">Bus 62 — mais seulement</text>
-          <text class="dg-label" x="732" y="365" text-anchor="middle">8 courses par jour</text>
-
-          <!-- issue focale -->
-          <rect class="dg-focal" x="144" y="460" width="272" height="48"></rect>
-          <text class="dg-label focal" x="280" y="481" text-anchor="middle">Vélo — 25 à 35 min</text>
-          <text class="dg-label focal" x="280" y="497" text-anchor="middle">de descente</text>
+          <line class="fig-axis" x1="70" y1="158" x2="860" y2="158"></line>
+          <text class="fig-tick" x="70" y="178" text-anchor="middle">6 h</text>
+          <text class="fig-tick" x="296" y="178" text-anchor="middle">10 h</text>
+          <text class="fig-tick" x="522" y="178" text-anchor="middle">14 h</text>
+          <text class="fig-tick" x="748" y="178" text-anchor="middle">18 h</text>
+          <text class="fig-tick" x="860" y="178" text-anchor="middle">20 h</text>
         </svg>
         <div class="chart-key">
-          <div><i class="k-g"></i><span>Verglas ou neige sur la descente ? → voiture jusqu'au P+R Grand Sablon, puis tram B</span></div>
-          <div><i class="k-g"></i><span>Sinon, pluie forte ou nuit sans visibilité ? → bus 62, 8 courses par jour</span></div>
-          <div><i class="k-s"></i><span>Sinon → vélo, 25 à 35 min de descente</span></div>
+          <div><i class="k-s"></i><span>Le Sappey : 8 bus par jour, premier départ 7 h 09, dernier 18 h 04</span></div>
+          <div><i class="k-v"></i><span>Veurey : deux lignes de bus vers le tram, un car régional, passages réguliers</span></div>
         </div>
       </div>
-      <figcaption>À Veurey, ce diagramme n'existe pas : la réponse est « vélo », sauf épisode neigeux exceptionnel. C'est peut-être la façon la plus honnête de résumer tout ce rapport — une commune a besoin d'un arbre de décision chaque matin, l'autre n'en a pas besoin.</figcaption>
+      <figcaption>Schéma. Les huit départs du Sappey sont réels dans leur nombre et leurs extrémités ; leur répartition dans la journée est indicative. Les fréquences exactes depuis Veurey restent à vérifier sur les horaires en vigueur.</figcaption>
     </figure>
-  </section>
 
-  <hr class="rule">
-
-  <section id="pratique">
-    <div class="head">
-      <div class="kicker"><span class="num">08</span>Aspects pratiques</div>
-      <h2>Stationnement et équipement</h2>
-    </div>
-    <div class="col">
-      <ul>
-        <li><strong>Stationnement du vélo à la gare.</strong> Le parking vélo sécurisé de la gare de Grenoble compte 1 146 places, géré par Mvélo+. Indispensable dans les deux scénarios : un VAE ne se laisse pas dehors toute la journée. C'est la première démarche à engager, avant même le déménagement — ce type de consigne se réserve.</li>
-        <li><strong>Batterie.</strong> Au Sappey, prévoir une recharge quotidienne et un point de charge sur le lieu de travail si c'est possible ; le froid fait perdre 20 à 30 % de capacité, et une batterie stockée dehors l'hiver vieillit plus vite. À Veurey, la question ne se pose pas.</li>
-        <li><strong>Éclairage.</strong> De novembre à février, les deux trajets se font de nuit dans les deux sens. Au Sappey, la descente exige un éclairage de vraie puissance, pas un feu de signalisation urbain. À Veurey, c'est l'état de l'éclairage de la digue qui déterminera le besoin.</li>
-        <li><strong>Forfait mobilités durables.</strong> À examiner avec l'employeur : il peut prendre en charge une partie des frais de trajet à vélo, et change l'équation financière dans les deux cas.</li>
-      </ul>
+    <div class="duo">
+      <div class="card s">
+        <div class="place">Le Sappey</div>
+        <p>Huit bus par jour en semaine, premier départ à 7 h 09, dernier retour à 18 h 04, environ 24 minutes jusqu'à Grenoble puis le tram. Ça couvre des horaires de bureau classiques — mais rater le dernier bus n'est pas un petit incident.</p>
+        <p>Le reste du temps, c'est la voiture. Et pas n'importe laquelle : la commune est en zone montagne, <strong>pneus hiver ou chaînes obligatoires du 1<sup>er</sup> novembre au 31 mars</strong>.</p>
+        <p>L'astuce à connaître : descendre en voiture jusqu'au parking relais du Grand Sablon, au pied de la montée, puis prendre le tram B — un passage toutes les 4 à 5 minutes jusqu'à la gare.</p>
+      </div>
+      <div class="card v">
+        <div class="place">Veurey-Voroize</div>
+        <p>On est sur un réseau ordinaire : deux lignes de bus vers le tram, un car régional, et la gare de Voreppe à côté — <strong>9 minutes de train jusqu'à Grenoble</strong>, le trajet le plus rapide de tout ce document.</p>
+        <p>Une réserve, tout de même : cette gare se mérite. Il faut traverser l'Isère, ce qui fait 12 km par la route là où la carte en montre 5 à vol d'oiseau. Elle ne se prend pas à pied depuis Veurey.</p>
+      </div>
     </div>
   </section>
 
   <hr class="rule">
 
-  <section id="qualite">
+  <section id="porte">
     <div class="head">
-      <div class="kicker"><span class="num">09</span>Qualité de vie</div>
-      <h2>Deux quotidiens qui n'ont presque rien en commun</h2>
+      <div class="kicker"><span class="num">05</span>Le quotidien</div>
+      <h2>Ce qu'on a à sa porte</h2>
     </div>
     <div class="col">
-      <p>Le trajet ne représente qu'une heure et demie par jour. Le reste du temps, on habite quelque part — et sur ce terrain, les deux communes ne jouent pas du tout le même jeu.</p>
+      <p>Deux villages de taille comparable, mais l'un est accroché à 1 000 mètres et l'autre posé au bord d'une vallée équipée. Voilà ce que ça change, ligne par ligne.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Ce qui est sur place, et ce qui demande un déplacement</caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Le Sappey</th>
+            <th scope="col">Veurey-Voroize</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Les courses</th>
+            <td>Épicerie locale et bio, deux marchés par semaine, pain au levain fait par un collectif d'habitants<span class="away">sur place</span></td>
+            <td>Épicerie avec point relais poste et pain, station-service et tabac<span class="away">sur place · supermarchés à Sassenage et Saint-Égrève</span></td>
+          </tr>
+          <tr>
+            <th scope="row">L'école</th>
+            <td>Maternelle et primaire, mutualisées avec Sarcenas<span class="away">sur place</span></td>
+            <td>Maternelle et primaire, avec cantine et périscolaire<span class="away">sur place</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Le collège</th>
+            <td>Jules Flandrin, à Corenc, par bus scolaire<span class="away">en bas de la montée</span></td>
+            <td>Alexander Fleming, à Sassenage<span class="away">quelques kilomètres de plat</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Médecin, pharmacie</th>
+            <td>Aucun dans la commune<span class="away">il faut descendre à Grenoble ou à Corenc</span></td>
+            <td>Aucun dans la commune<span class="away">Sassenage ou Saint-Égrève, à plat</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Sport en salle</th>
+            <td>Pas de gymnase — salle des fêtes, MJC, et le sport se fait dehors<span class="away">piscine à Meylan, ≈ 6 km</span></td>
+            <td>Salle des fêtes avec dojo, tennis, terrains de sport, clubs de village<span class="away">piscine des Bannettes, ≈ 3 km</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Nature au départ de la maison</th>
+            <td>Ski de fond, raquettes et sentiers de Chartreuse depuis la place du village</td>
+            <td>L'Isère, la voie verte, les falaises et le vallon des Écouges</td>
+          </tr>
+          <tr>
+            <th scope="row">Sortir le soir</th>
+            <td>Restaurants du village, sinon Grenoble<span class="away">20 min de voiture, et la remontée</span></td>
+            <td>Sassenage, Saint-Égrève, Grenoble<span class="away">bus et tram, sans voiture</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <p>La ligne à retenir n'est pas la liste des équipements — elle se ressemble beaucoup — mais <strong>la façon d'y aller</strong>. Au Sappey, tout ce qui n'est pas dans le village suppose de descendre puis de remonter, en voiture. À Veurey, la même chose se fait à plat, souvent en bus ou à vélo.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="faire">
+    <div class="head">
+      <div class="kicker"><span class="num">06</span>Le temps libre</div>
+      <h2>Ce qu'on peut y faire</h2>
+    </div>
+    <div class="col">
+      <p>C'est le chapitre qui départage le plus nettement les deux communes — et pas dans le sens du trajet. Les deux ont une vie associative dense pour leur taille, mais elles ne proposent pas du tout les mêmes journées.</p>
     </div>
 
     <div class="duo">
       <div class="card s">
         <div class="place">Le Sappey · le village de montagne</div>
-        <p>1 191 habitants sur 15,1 km², soit environ 79 habitants au km². Le village est intégralement situé dans le <strong>Parc naturel régional de Chartreuse</strong>, à 9 km de Grenoble mais 800 m au-dessus.</p>
+        <h3>L'hiver</h3>
         <ul>
-          <li><strong>Services :</strong> école maternelle et élémentaire sur place, boulangerie, épicerie, restaurants. En revanche, ni médecin ni pharmacie dans la commune — il faut descendre.</li>
-          <li><strong>Loisirs :</strong> une vingtaine de kilomètres de pistes de ski de fond au départ direct du village, itinéraires raquettes dédiés, un petit domaine alpin, et une liaison de 25 km vers Saint-Hugues quand l'enneigement le permet. Chamechaude et le Saint-Eynard partent de la porte d'entrée.</li>
-          <li><strong>Le revers :</strong> tout ce qui n'est pas dans le village se fait en voiture. Un rendez-vous médical, un supermarché, un cinéma, le collège des enfants — chaque fois, la descente et la remontée.</li>
+          <li>Le <strong>domaine nordique de Chamechaude</strong> part de la place du village : une vingtaine de kilomètres de pistes de ski de fond au départ direct, reliées au col de Porte et à Saint-Hugues quand la neige le permet.</li>
+          <li>Un <strong>petit domaine alpin</strong> familial, taillé pour apprendre à skier plutôt que pour les grandes descentes.</li>
+          <li><strong>Cinq circuits raquettes balisés</strong> autour du village, de la luge, du ski de randonnée.</li>
+        </ul>
+        <h3>L'été</h3>
+        <ul>
+          <li>Départs de randonnée vers <strong>Chamechaude, le Charmant Som et le fort du Saint-Eynard</strong> — sommets emblématiques de la Chartreuse, accessibles depuis la porte d'entrée.</li>
+          <li>VTT, et le <strong>col de Vence</strong>, un classique de l'entraînement cycliste grenoblois, qui passe par le village.</li>
+        </ul>
+        <h3>Toute l'année</h3>
+        <ul>
+          <li><strong>32 associations pour 1 200 habitants.</strong> Au centre, <em>La Bonne Fabrique</em>, qui anime le village depuis une dizaine d'années : ateliers, concerts, débats, espace de coworking.</li>
+          <li><strong>L'Arti'Som</strong>, boutique collective d'artisans — poterie, vitrail, miel, vêtements cousus main. <em>Pots et Papinette</em> récupère les fruits non ramassés pour en faire des confitures.</li>
+          <li>Une bibliothèque, une MJC, une salle des fêtes, deux marchés par semaine et un pain fabriqué par huit bénévoles qui se relaient au four.</li>
+          <li>À quelques kilomètres : le musée de la Grande Chartreuse et le musée d'art sacré contemporain de Saint-Hugues.</li>
         </ul>
       </div>
 
       <div class="card v">
-        <div class="place">Veurey · le bourg de vallée</div>
-        <p>1 427 habitants sur 12,2 km². Le bourg est en fond de vallée à environ 200 m, mais <strong>la commune s'étend de 178 à 1 620 m</strong> : les contreforts du Vercors et le vallon des Écouges lui appartiennent, et la forêt couvre l'essentiel du territoire.</p>
+        <div class="place">Veurey-Voroize · le bourg de vallée</div>
+        <h3>Dehors</h3>
         <ul>
-          <li><strong>Services :</strong> école maternelle et élémentaire, épicerie, station-service. Les commerces et services lourds sont à Sassenage et Saint-Égrève, à quelques kilomètres de plat.</li>
-          <li><strong>Loisirs :</strong> l'Isère et la voie verte au pied du bourg, deux réservoirs de biodiversité (vallon des Écouges, Dent de Moirans), des zones humides protégées, et la Tour dite des Templiers, du XIII<sup>e</sup> siècle, seul monument protégé de la commune.</li>
-          <li><strong>Le revers :</strong> la zone d'activité Actipole, plus de 63 hectares et une soixantaine d'entreprises, l'A48 et la RD1532 à proximité, et un classement en territoire à risque d'inondation au titre du PPRI Isère aval — à vérifier parcelle par parcelle avant tout achat.</li>
+          <li>La commune ne se résume pas au fond de vallée : <strong>elle monte de 178 à 1 620 mètres</strong>. Les contreforts du Vercors et le <strong>vallon des Écouges</strong> lui appartiennent — canyon, cascades, forêt.</li>
+          <li><strong>Seize sites d'escalade dans un rayon de 10 km</strong> : c'est l'une des densités les plus fortes du département.</li>
+          <li>La <strong>voie verte au pied du bourg</strong> file sans interruption sur une trentaine de kilomètres le long de l'Isère, à l'écart des voitures. Idéale pour rouler en famille, pas seulement pour aller travailler.</li>
+        </ul>
+        <h3>En club</h3>
+        <ul>
+          <li>Un <strong>club de montagne et d'escalade</strong> qui encadre randonnée, escalade, via ferrata, alpinisme, ski et VTT, enfants comme adultes.</li>
+          <li>Tennis avec école et compétitions, basket en championnat, judo dès 4 ans, hockey sur gazon dès 6 ans, krav-maga, gym douce et pilates.</li>
+        </ul>
+        <h3>Culture et vie de village</h3>
+        <ul>
+          <li>Une <strong>école de musique associative</strong> — piano, guitare, batterie, violon, saxophone, clarinette, chant — en cours collectifs ou individuels.</li>
+          <li>Des ateliers d'arts pour tous les âges : poterie, mosaïque, peinture, couture, céramique, art floral, et des ateliers d'arts plastiques pour enfants et adolescents.</li>
+          <li>Un <strong>accueil jeunes 11–17 ans</strong>, un comité d'animation (fête du village, 14 juillet), un comité de jumelage avec l'Italie et le Québec.</li>
+          <li>Une association de patrimoine autour de la <strong>tour dite des Templiers</strong>, du XIII<sup>e</sup> siècle, seul monument protégé de la commune.</li>
+        </ul>
+        <h3>Le revers du décor</h3>
+        <ul>
+          <li>La zone d'activité Actipole — plus de 60 hectares et une soixantaine d'entreprises — l'autoroute A48 et une route départementale passante ne sont pas loin.</li>
+          <li>Une partie du territoire est en <strong>zone inondable</strong> : à vérifier parcelle par parcelle avant tout achat.</li>
         </ul>
       </div>
     </div>
 
     <div class="col">
       <div class="note">
-        <span class="tag">Nuance</span>
-        Le livret communal du PLUi de Veurey-Voroize relève lui-même une forte dépendance à la voiture, faute de desserte suffisante en transports collectifs. C'est à nuancer avec la liste des lignes disponibles citée plus haut : l'offre existe, mais son niveau de service réel reste à mesurer sur les horaires.
+        <span class="tag">Le vrai partage</span>
+        Au Sappey, l'activité est <em>au départ de la porte</em> et dépend de la saison. À Veurey, elle est <em>dans un club, à cinq minutes</em>, et fonctionne toute l'année. L'un convient à qui part seul en montagne quand l'envie vient ; l'autre à qui préfère un mardi soir de tennis et un mercredi de judo pour les enfants.
       </div>
     </div>
+  </section>
 
-    <h3>L'air et la lumière en hiver — le paramètre qui inverse le raisonnement</h3>
+  <hr class="rule">
 
+  <section id="climat">
+    <div class="head">
+      <div class="kicker"><span class="num">07</span>Le climat</div>
+      <h2>L'argument caché</h2>
+    </div>
     <div class="col">
-      <p>C'est l'élément le plus contre-intuitif de ce rapport. En hiver, par temps anticyclonique, l'air froid s'accumule au fond de la cuvette grenobloise et une <strong>couche d'inversion thermique</strong> se forme au-dessus. Elle fait couvercle : les polluants émis sous elle s'y accumulent, l'air ne circule plus, et les pics de particules fines s'installent — précisément là où se trouve Veurey.</p>
-      <p>Au-dessus de cette couche, la situation est exactement inverse. En décembre 2021, il faisait −4 °C sous le plafond gris à Grenoble et +3,6 °C en plein soleil à 1 800 m. Le Sappey, à 1 014 m, se trouve fréquemment au-dessus ou en limite de cette couche : quelques centaines de mètres de dénivelé séparent le brouillard du grand bleu.</p>
-      <p>Deux nuances s'imposent, pour ne pas surinterpréter. Le Sappey n'est pas à 1 800 m et n'échappe pas à toutes les inversions ; et Veurey, en entrée de vallée, est mieux ventilé que le cœur de l'agglomération.</p>
+      <p>C'est la partie la plus contre-intuitive, et sans doute la plus importante sur la durée d'un projet de vie.</p>
+      <h3>L'hiver : un couvercle sur la vallée</h3>
+      <p>Par beau temps d'hiver, l'air froid s'accumule au fond de la cuvette grenobloise et forme une sorte de couvercle. Dessous : du gris, de l'humidité, et la pollution qui s'accumule faute de vent. Dessus : le soleil. Le Sappey, à 1 014 m, se trouve souvent juste au-dessus, ou à la limite. Quelques centaines de mètres séparent le brouillard du grand bleu.</p>
     </div>
 
     <figure>
       <div class="chart-frame">
-        <svg viewBox="0 0 960 496" role="img" aria-labelledby="coupe-title coupe-desc">
-          <title id="coupe-title">Coupe schématique de la vallée grenobloise en hiver</title>
-          <desc id="coupe-desc">Coupe d'ouest en est montrant Veurey-Voroize à 198 m au fond de la vallée, sous une couche d'inversion située vers 900 m qui piège l'air froid et les polluants, et Le Sappey-en-Chartreuse à 1 014 m, situé au-dessus ou en limite de cette couche et donc au soleil.</desc>
-          <defs>
-            <marker id="coupe-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-              <polygon class="mk-warn" points="0 0, 8 3, 0 6"></polygon>
-            </marker>
-          </defs>
+        <svg viewBox="0 0 900 300" role="img" aria-labelledby="inv-title inv-desc">
+          <title id="inv-title">Le couvercle d'air froid en hiver</title>
+          <desc id="inv-desc">Coupe schématique : Veurey-Voroize, à 198 m, se trouve sous la couche d'air froid qui plafonne vers 900 m ; Le Sappey, à 1 014 m, se trouve au-dessus, au soleil.</desc>
 
-          <line class="dg-axis" x1="40" y1="64" x2="40" y2="384"></line>
-          <line class="dg-axis" x1="40" y1="384" x2="48" y2="384"></line>
-          <line class="dg-axis" x1="40" y1="304" x2="48" y2="304"></line>
-          <line class="dg-axis" x1="40" y1="224" x2="48" y2="224"></line>
-          <line class="dg-axis" x1="40" y1="144" x2="48" y2="144"></line>
-          <line class="dg-axis" x1="40" y1="64" x2="48" y2="64"></line>
-          <text class="dg-tick" x="36" y="388" text-anchor="end">0</text>
-          <text class="dg-tick" x="36" y="308" text-anchor="end">500</text>
-          <text class="dg-tick" x="36" y="228" text-anchor="end">1000</text>
-          <text class="dg-tick" x="36" y="148" text-anchor="end">1500</text>
-          <text class="dg-tick" x="36" y="68" text-anchor="end">2000</text>
-          <text class="dg-tick" x="36" y="48" text-anchor="end">m</text>
+          <path class="fig-fog" d="M0,116 L640,116 L620,132 L520,182 L420,228 L340,240 L0,240 Z"></path>
+          <path class="fig-ground" d="M0,240 L340,240 L420,228 L520,182 L620,132 L700,102 L770,96 L860,58 L900,44 L900,300 L0,300 Z"></path>
+          <path class="fig-ground-line" d="M0,240 L340,240 L420,228 L520,182 L620,132 L700,102 L770,96 L860,58 L900,44"></path>
+          <line class="fig-lid" x1="0" y1="116" x2="660" y2="116"></line>
 
-          <polygon class="dg-band" points="196,240 636,240 600,296 560,344 520,352 264,352 232,320"></polygon>
-          <line class="dg-band-top" x1="196" y1="240" x2="636" y2="240"></line>
+          <circle class="fig-sun" cx="790" cy="52" r="13"></circle>
+          <line class="fig-sun" x1="790" y1="26" x2="790" y2="34"></line>
+          <line class="fig-sun" x1="790" y1="70" x2="790" y2="78"></line>
+          <line class="fig-sun" x1="764" y1="52" x2="772" y2="52"></line>
+          <line class="fig-sun" x1="808" y1="52" x2="816" y2="52"></line>
+          <line class="fig-sun" x1="772" y1="34" x2="777" y2="39"></line>
+          <line class="fig-sun" x1="803" y1="65" x2="808" y2="70"></line>
 
-          <path class="dg-terrain" d="M56,160 L120,128 L180,200 L232,320 L264,352 L420,352 L520,352 L560,344 L600,296 L660,200 L688,168 L720,216 L768,224 L816,216 L864,88 L920,52 L920,384 L56,384 Z"></path>
-          <path class="dg-ridge" d="M56,160 L120,128 L180,200 L232,320 L264,352 L420,352 L520,352 L560,344 L600,296 L660,200 L688,168 L720,216 L768,224 L816,216 L864,88 L920,52"></path>
+          <circle class="fig-dot-v" cx="180" cy="240" r="6"></circle>
+          <text class="fig-name v" x="180" y="226" text-anchor="middle">Veurey · 198 m</text>
+          <text class="fig-note" x="180" y="266" text-anchor="middle">sous le couvercle</text>
 
-          <circle class="dg-sun" cx="744" cy="112" r="16"></circle>
-          <line class="dg-sun" x1="744" y1="84" x2="744" y2="92"></line>
-          <line class="dg-sun" x1="716" y1="112" x2="724" y2="112"></line>
-          <line class="dg-sun" x1="764" y1="112" x2="772" y2="112"></line>
-          <line class="dg-ray" x1="752" y1="144" x2="772" y2="200" marker-end="url(#coupe-arrow)"></line>
+          <circle class="fig-dot-s" cx="770" cy="96" r="6"></circle>
+          <text class="fig-name s" x="756" y="88" text-anchor="end">Le Sappey · 1 014 m</text>
+          <text class="fig-note" x="756" y="106" text-anchor="end">au-dessus, ou juste à la limite</text>
 
-          <rect class="dg-mask" x="248" y="216" width="216" height="16"></rect>
-          <text class="dg-sub" x="252" y="228">COUCHE D&#8217;INVERSION &#8776; 900 m</text>
-
-          <rect class="dg-mask" x="296" y="272" width="248" height="16"></rect>
-          <text class="dg-sub" x="300" y="284">AIR FROID ET POLLUANTS PI&#201;G&#201;S</text>
-
-          <rect class="dg-mask" x="52" y="96" width="112" height="16"></rect>
-          <text class="dg-tick" x="56" y="108">Vercors</text>
-          <rect class="dg-mask" x="568" y="168" width="92" height="16"></rect>
-          <text class="dg-tick" x="572" y="180">St-Eynard</text>
-          <rect class="dg-mask" x="836" y="32" width="120" height="16"></rect>
-          <text class="dg-tick" x="840" y="44">Chamechaude</text>
-
-          <circle class="dg-dot-v" cx="264" cy="352" r="6"></circle>
-          <rect class="dg-mask" x="148" y="360" width="236" height="36"></rect>
-          <text class="dg-name v" x="152" y="376">Veurey-Voroize</text>
-          <text class="dg-tick" x="152" y="392">198 m &#8212; sous le plafond</text>
-
-          <circle class="dg-dot-n" cx="520" cy="352" r="5"></circle>
-          <rect class="dg-mask" x="440" y="396" width="212" height="16"></rect>
-          <text class="dg-tick" x="444" y="408">Gare de Grenoble &#183; 213 m</text>
-
-          <circle class="dg-dot-s" cx="768" cy="224" r="6"></circle>
-          <rect class="dg-mask" x="636" y="236" width="256" height="36"></rect>
-          <text class="dg-name s" x="888" y="252" text-anchor="end">Le Sappey-en-Chartreuse</text>
-          <text class="dg-tick" x="888" y="268" text-anchor="end">1 014 m &#8212; au-dessus ou en limite</text>
-
-          <line class="dg-axis" x1="40" y1="444" x2="920" y2="444"></line>
-          <text class="dg-sub" x="40" y="468">COUPE SCH&#201;MATIQUE OUEST &#8594; EST &#183; ALTITUDES R&#201;ELLES, DISTANCES NON &#192; L&#8217;&#201;CHELLE</text>
+          <text class="fig-note" x="14" y="106">Couvercle d'air froid — vers 900 m</text>
         </svg>
         <div class="chart-key">
-          <div><i class="k-v"></i><span>Veurey-Voroize, 198 m — sous la couche d'inversion</span></div>
-          <div><i class="k-s"></i><span>Le Sappey, 1 014 m — au-dessus ou en limite de la couche</span></div>
-          <div><i class="k-w"></i><span>Couche d'inversion vers 900 m : elle piège l'air froid et les polluants, et le soleil s'y arrête</span></div>
+          <div><i class="k-v"></i><span>Veurey, 198 m — sous le couvercle : gris, humidité, pollution piégée</span></div>
+          <div><i class="k-s"></i><span>Le Sappey, 1 014 m — au-dessus ou à la limite : soleil</span></div>
+          <div><i class="k-w"></i><span>Le couvercle se forme vers 900 m — un ordre de grandeur, pas une constante</span></div>
         </div>
       </div>
-      <figcaption>Coupe schématique : les altitudes sont réelles, les distances horizontales ne le sont pas. La couche d'inversion se forme à une altitude variable — 900 m est un ordre de grandeur, pas une constante ; certains épisodes plafonnent plus bas, d'autres montent au-dessus du Sappey.</figcaption>
+      <figcaption>Coupe de principe : les altitudes sont réelles, les distances ne le sont pas. Certains épisodes plafonnent plus bas, d'autres montent au-dessus du Sappey — le village n'échappe pas à tout. Et Veurey, à l'entrée de la vallée, est mieux ventilé que le centre de Grenoble.</figcaption>
     </figure>
 
-    <h3>Combien de soleil, concrètement</h3>
-
     <div class="col">
-      <p>Le point de départ mesuré est peu réjouissant : Grenoble reçoit <strong>71,6 heures de soleil en décembre</strong>, 95 en janvier et 111,7 en février, pour environ 2 070 heures sur l'année. Décembre, en fond de vallée, c'est <strong>2 h 20 de soleil par jour en moyenne</strong>.</p>
-      <p>À cette latitude — 45,25° N — la géométrie n'aide pas. Au solstice d'hiver, le jour dure 8 h 32, le soleil se lève à l'azimut 124°, se couche à 236°, et <strong>culmine à 21,3° au-dessus de l'horizon</strong>. Autrement dit, il suffit d'un relief dépassant 21° pour effacer le soleil de midi.</p>
-      <p>Pour savoir ce qui reste de ces 21,3&#176;, il faut mesurer l&#8217;horizon r&#233;el de chaque village. Je l&#8217;ai fait en sondant le mod&#232;le num&#233;rique de terrain europ&#233;en, de 400 m&#232;tres &#224; 4 kilom&#232;tres, sur cinq directions couvrant tout l&#8217;arc solaire d&#8217;hiver. Le r&#233;sultat n&#8217;est pas celui que j&#8217;attendais.</p>
-
-      <figure>
-        <div class="chart-frame">
-          <svg viewBox="0 0 960 464" role="img" aria-labelledby="soleil-title soleil-desc">
-          <title id="soleil-title">Course du soleil au solstice d&#8217;hiver et horizon des deux communes</title>
-          <desc id="soleil-desc">Au solstice d&#8217;hiver, le soleil culmine &#224; 21,3&#176;. L&#8217;horizon du Sappey est haut au sud-est (19&#176;) et nul au sud-ouest : le village perd le matin et garde tout l&#8217;apr&#232;s-midi. Celui de Veurey est nul au sud-est et haut au sud-ouest (20&#176;) : le bourg garde le matin et perd l&#8217;apr&#232;s-midi. Les deux re&#231;oivent 6 h 16 de soleil direct.</desc>
-          <defs>
-            <clipPath id="soleil-clip"><rect x="80" y="56" width="840" height="328"></rect></clipPath>
-          </defs>
-
-          <line class="dg-grid" x1="80" y1="320" x2="920" y2="320"></line>
-          <line class="dg-grid" x1="80" y1="256" x2="920" y2="256"></line>
-          <line class="dg-grid" x1="80" y1="192" x2="920" y2="192"></line>
-          <line class="dg-grid" x1="80" y1="128" x2="920" y2="128"></line>
-          <line class="dg-grid" x1="80" y1="64" x2="920" y2="64"></line>
-          <text class="dg-tick" x="72" y="324" text-anchor="end">5</text>
-          <text class="dg-tick" x="72" y="260" text-anchor="end">10</text>
-          <text class="dg-tick" x="72" y="196" text-anchor="end">15</text>
-          <text class="dg-tick" x="72" y="132" text-anchor="end">20</text>
-          <text class="dg-tick" x="72" y="68" text-anchor="end">25</text>
-          <text class="dg-tick" x="72" y="48" text-anchor="end">&#176;</text>
-
-          <g clip-path="url(#soleil-clip)">
-            <path class="dg-area-v" d="M80.0,377.6 L255.0,377.6 L500.0,222.7 L640.0,225.3 L780.0,133.1 L920.0,143.4 L920.0,384 L80.0,384 Z"></path>
-            <path class="dg-area-s" d="M80.0,140.8 L220.0,142.1 L360.0,202.2 L500.0,266.2 L640.0,256.0 L815.0,384.0 L920.0,384.0 L920.0,384 L80.0,384 Z"></path>
-            <path class="dg-hz-v" d="M80.0,377.6 L255.0,377.6 L500.0,222.7 L640.0,225.3 L780.0,133.1 L920.0,143.4"></path>
-            <path class="dg-hz-s" d="M80.0,140.8 L220.0,142.1 L360.0,202.2 L500.0,266.2 L640.0,256.0 L815.0,384.0 L920.0,384.0"></path>
-            <path class="dg-ray" d="M110.9,384.0 L112.4,381.7 L118.6,372.5 L124.9,363.3 L131.3,354.3 L137.7,345.4 L144.1,336.6 L150.6,328.0 L157.1,319.4 L163.7,311.0 L170.4,302.6 L177.1,294.5 L183.9,286.4 L190.7,278.5 L197.6,270.7 L204.5,263.1 L211.5,255.6 L218.6,248.2 L225.7,241.0 L232.9,234.0 L240.2,227.1 L247.5,220.4 L254.8,213.8 L262.3,207.5 L269.8,201.3 L277.3,195.2 L285.0,189.4 L292.6,183.7 L300.4,178.3 L308.2,173.0 L316.1,167.9 L324.0,163.0 L331.9,158.3 L340.0,153.8 L348.1,149.6 L356.2,145.5 L364.4,141.7 L372.6,138.0 L380.9,134.6 L389.2,131.4 L397.6,128.5 L406.0,125.7 L414.4,123.2 L422.9,121.0 L431.4,118.9 L439.9,117.1 L448.4,115.6 L457.0,114.3 L465.6,113.2 L474.2,112.3 L482.8,111.7 L491.4,111.4 L500.0,111.2 L508.6,111.4 L517.2,111.7 L525.8,112.3 L534.4,113.2 L543.0,114.3 L551.6,115.6 L560.1,117.1 L568.6,118.9 L577.1,121.0 L585.6,123.2 L594.0,125.7 L602.4,128.5 L610.8,131.4 L619.1,134.6 L627.4,138.0 L635.6,141.7 L643.8,145.5 L651.9,149.6 L660.0,153.8 L668.1,158.3 L676.0,163.0 L683.9,167.9 L691.8,173.0 L699.6,178.3 L707.4,183.7 L715.0,189.4 L722.7,195.2 L730.2,201.3 L737.7,207.5 L745.2,213.8 L752.5,220.4 L759.8,227.1 L767.1,234.0 L774.3,241.0 L781.4,248.2 L788.5,255.6 L795.5,263.1 L802.4,270.7 L809.3,278.5 L816.1,286.4 L822.9,294.5 L829.6,302.6 L836.3,311.0 L842.9,319.4 L849.4,328.0 L855.9,336.6 L862.3,345.4 L868.7,354.3 L875.1,363.3 L881.4,372.5 L887.6,381.7 L889.1,384.0" fill="none"></path>
-          </g>
-
-          <line class="dg-axis" x1="80" y1="384" x2="920" y2="384"></line>
-          <line class="dg-axis" x1="80" y1="384" x2="80" y2="56"></line>
-          <text class="dg-tick" x="80" y="404" text-anchor="middle">120&#176;</text>
-          <text class="dg-tick" x="288" y="404" text-anchor="middle">150&#176;</text>
-          <text class="dg-tick" x="500" y="404" text-anchor="middle">180&#176;</text>
-          <text class="dg-tick" x="712" y="404" text-anchor="middle">210&#176;</text>
-          <text class="dg-tick" x="920" y="404" text-anchor="middle">240&#176;</text>
-          <text class="dg-sub" x="80" y="424" text-anchor="middle">SUD-EST</text>
-          <text class="dg-sub" x="500" y="424" text-anchor="middle">SUD</text>
-          <text class="dg-sub" x="920" y="424" text-anchor="end">OUEST-SUD-OUEST</text>
-
-          <circle class="dg-dot-v" cx="116" cy="376" r="5"></circle>
-          <rect class="dg-mask" x="88" y="340" width="80" height="16"></rect>
-          <text class="dg-tick v" x="92" y="352">7 h 48</text>
-
-          <circle class="dg-dot-s" cx="302" cy="177" r="5"></circle>
-          <rect class="dg-mask" x="272" y="140" width="80" height="16"></rect>
-          <text class="dg-tick s" x="276" y="152">10 h 01</text>
-
-          <circle class="dg-dot-v" cx="704" cy="182" r="5"></circle>
-          <rect class="dg-mask" x="676" y="144" width="80" height="16"></rect>
-          <text class="dg-tick v" x="680" y="156">14 h 03</text>
-
-          <circle class="dg-dot-s" cx="889" cy="384" r="5"></circle>
-          <rect class="dg-mask" x="808" y="344" width="84" height="16"></rect>
-          <text class="dg-tick s" x="888" y="356" text-anchor="end">16 h 16</text>
-
-          <rect class="dg-mask" x="436" y="88" width="132" height="16"></rect>
-          <text class="dg-sub" x="500" y="100" text-anchor="middle">MIDI &#183; 21,3&#176;</text>
-
-          <g class="dg-legend">
-          <line class="dg-axis" x1="40" y1="440" x2="920" y2="440"></line>
-          <rect class="dg-sw-s" x="40" y="452" width="12" height="12"></rect>
-          <text class="dg-sub" x="60" y="462">HORIZON DU SAPPEY</text>
-          <rect class="dg-sw-v" x="292" y="452" width="12" height="12"></rect>
-          <text class="dg-sub" x="312" y="462">HORIZON DE VEUREY</text>
-          <line class="dg-ray" x1="548" y1="458" x2="568" y2="458"></line>
-          <text class="dg-sub" x="576" y="462">COURSE DU SOLEIL, 21 D&#201;CEMBRE</text>
-          </g>
-        </svg>
-          <div class="chart-key">
-            <div><i class="k-s"></i><span>Horizon du Sappey : haut au sud-est (19&#176;), nul au sud-ouest</span></div>
-            <div><i class="k-v"></i><span>Horizon de Veurey : nul au sud-est, haut au sud-ouest (20&#176;)</span></div>
-            <div><i class="k-w"></i><span>Course du soleil le 21 d&#233;cembre, culminant &#224; 21,3&#176; &#224; midi</span></div>
-          </div>
-        </div>
-        <figcaption>Horizon mesur&#233; sur le mod&#232;le num&#233;rique de terrain EU-DEM (25 m), cinq azimuts par site, cinq distances par azimut, depuis un point du village. La courbe du soleil est calcul&#233;e pour la latitude 45,25&#176; N au solstice. R&#233;fraction atmosph&#233;rique et v&#233;g&#233;tation non prises en compte.</figcaption>
-      </figure>
-
-      <p>Les deux profils sont <strong>presque exactement sym&#233;triques</strong>. Au Sappey, la cr&#234;te du Saint-Eynard passe juste au sud-est du village et culmine &#224; 19&#176; au-dessus de lui : elle mange la matin&#233;e. Mais elle s&#8217;abaisse ensuite, ne fait plus que 9&#176; plein sud, et s&#8217;efface compl&#232;tement au sud-ouest, o&#249; le terrain plonge vers le col de Vence : l&#8217;apr&#232;s-midi est enti&#232;rement d&#233;gag&#233;e, jusqu&#8217;au coucher r&#233;el.</p>
-
-      <p>&#192; Veurey, c&#8217;est l&#8217;inverse trait pour trait. Vers le sud-est, l&#8217;axe de la vall&#233;e est parfaitement ouvert &#8212; le terrain reste entre 196 et 202 m&#232;tres sur six kilom&#232;tres, soit un horizon &#224; un demi-degr&#233; : le soleil se l&#232;ve pour ainsi dire &#224; l&#8217;heure th&#233;orique. Puis les escarpements du Vercors montent, 12,6&#176; plein sud, <strong>19,6&#176; au sud-ouest</strong> : le soleil dispara&#238;t derri&#232;re eux alors qu&#8217;il est encore &#224; 16&#176; au-dessus de l&#8217;horizon.</p>
-
-      <figure>
-        <div class="chart-frame">
-          <svg viewBox="0 0 960 320" role="img" aria-labelledby="journee-title journee-desc">
-          <title id="journee-title">Le 21 d&#233;cembre, heure par heure</title>
-          <desc id="journee-desc">Au solstice, Veurey-Voroize re&#231;oit le soleil direct de 7 h 48 &#224; 14 h 03 et Le Sappey de 10 h 01 &#224; 16 h 16 : m&#234;me dur&#233;e, 6 h 16, mais sur des moiti&#233;s oppos&#233;es de la journ&#233;e.</desc>
-          <line class="dg-grid" x1="200.0" y1="72" x2="200.0" y2="232"></line>
-          <text class="dg-tick" x="200.0" y="252" text-anchor="middle">7h</text>
-          <line class="dg-grid" x1="272.0" y1="72" x2="272.0" y2="232"></line>
-          <text class="dg-tick" x="272.0" y="252" text-anchor="middle">8h</text>
-          <line class="dg-grid" x1="344.0" y1="72" x2="344.0" y2="232"></line>
-          <text class="dg-tick" x="344.0" y="252" text-anchor="middle">9h</text>
-          <line class="dg-grid" x1="416.0" y1="72" x2="416.0" y2="232"></line>
-          <text class="dg-tick" x="416.0" y="252" text-anchor="middle">10h</text>
-          <line class="dg-grid" x1="488.0" y1="72" x2="488.0" y2="232"></line>
-          <text class="dg-tick" x="488.0" y="252" text-anchor="middle">11h</text>
-          <line class="dg-grid" x1="560.0" y1="72" x2="560.0" y2="232"></line>
-          <text class="dg-tick" x="560.0" y="252" text-anchor="middle">12h</text>
-          <line class="dg-grid" x1="632.0" y1="72" x2="632.0" y2="232"></line>
-          <text class="dg-tick" x="632.0" y="252" text-anchor="middle">13h</text>
-          <line class="dg-grid" x1="704.0" y1="72" x2="704.0" y2="232"></line>
-          <text class="dg-tick" x="704.0" y="252" text-anchor="middle">14h</text>
-          <line class="dg-grid" x1="776.0" y1="72" x2="776.0" y2="232"></line>
-          <text class="dg-tick" x="776.0" y="252" text-anchor="middle">15h</text>
-          <line class="dg-grid" x1="848.0" y1="72" x2="848.0" y2="232"></line>
-          <text class="dg-tick" x="848.0" y="252" text-anchor="middle">16h</text>
-          <line class="dg-grid" x1="920.0" y1="72" x2="920.0" y2="232"></line>
-          <text class="dg-tick" x="920.0" y="252" text-anchor="middle">17h</text>
-          <rect class="dg-track" x="252.8" y="96" width="614.4" height="32"></rect>
-          <rect class="dg-sun-v" x="257.6" y="96" width="450.0" height="32"></rect>
-          <text class="dg-name v" x="188" y="117" text-anchor="end">Veurey-Voroize</text>
-          <text class="dg-tick v" x="267.6" y="117">7 h 48</text>
-          <text class="dg-tick v" x="697.6" y="117" text-anchor="end">14 h 03</text>
-          <rect class="dg-track" x="252.8" y="176" width="614.4" height="32"></rect>
-          <rect class="dg-sun-s" x="417.2" y="176" width="450.0" height="32"></rect>
-          <text class="dg-name s" x="188" y="197" text-anchor="end">Le Sappey</text>
-          <text class="dg-tick s" x="427.2" y="197">10 h 01</text>
-          <text class="dg-tick s" x="857.2" y="197" text-anchor="end">16 h 16</text>
-          <line class="dg-axis" x1="200" y1="232" x2="920" y2="232"></line>
-          <g class="dg-legend">
-          <line class="dg-axis" x1="40" y1="284" x2="920" y2="284"></line>
-          <rect class="dg-sw-track" x="40" y="296" width="12" height="12"></rect>
-          <text class="dg-sub" x="60" y="306">JOUR SANS SOLEIL DIRECT</text>
-          <rect class="dg-sw-v" x="332" y="296" width="12" height="12"></rect>
-          <text class="dg-sub" x="352" y="306">SOLEIL &#192; VEUREY</text>
-          <rect class="dg-sw-s" x="580" y="296" width="12" height="12"></rect>
-          <text class="dg-sub" x="600" y="306">SOLEIL AU SAPPEY</text>
-          <text class="dg-sub" x="920" y="306" text-anchor="end">TEMPS SOLAIRE</text>
-          </g>
-        </svg>
-          <div class="chart-key">
-            <div><i class="k-v"></i><span>Veurey : soleil de 7 h 48 &#224; 14 h 03</span></div>
-            <div><i class="k-s"></i><span>Le Sappey : soleil de 10 h 01 &#224; 16 h 16</span></div>
-            <div><i class="k-g"></i><span>Même durée &#8212; 6 h 16 &#8212; sur des moiti&#233;s oppos&#233;es de la journ&#233;e</span></div>
-          </div>
-        </div>
-        <figcaption>Dur&#233;es th&#233;oriques par ciel clair au 21 d&#233;cembre, en temps solaire &#8212; ajouter environ 25 minutes pour l&#8217;heure l&#233;gale d&#8217;hiver. Elles ignorent les nuages et le brouillard, qui sont pr&#233;cis&#233;ment ce qui s&#233;pare vraiment les deux communes.</figcaption>
-      </figure>
-
-      <p>Le calcul donne alors un r&#233;sultat que je n&#8217;aurais pas devin&#233; : <strong>les deux communes re&#231;oivent exactement la m&#234;me dur&#233;e de soleil direct au solstice, 6 h 16</strong>. Ce n&#8217;est pas la quantit&#233; qui diff&#232;re, c&#8217;est l&#8217;horaire. Veurey a le matin, Le Sappey a l&#8217;apr&#232;s-midi.</p>
-
-      <p>Pour quelqu&#8217;un qui part travailler &#224; 7 h 30 et rentre &#224; 18 h 30, la remarque est cruelle dans les deux cas : en d&#233;cembre, tout le soleil de la journ&#233;e tombe pendant les heures de bureau. La diff&#233;rence se joue les week-ends et les jours de cong&#233; &#8212; matin&#233;es lumineuses &#224; Veurey, fins d&#8217;apr&#232;s-midi lumineuses au Sappey. C&#8217;est un vrai crit&#232;re, mais un crit&#232;re de temps libre, pas de trajet.</p>
-
-      <p>Et surtout, tout ce qui précède suppose un ciel clair. C'est là que la géométrie cède la place à la météo, et que l'égalité se défait : <strong>sous une inversion, l'ensoleillement du fond de vallée tombe à zéro quelle que soit la géométrie</strong>, tandis qu'à 1 014 m on est souvent au-dessus du plafond. Veurey a le matin sur le papier, mais c'est précisément le moment de la journée où le brouillard de vallée est le plus dense. Le Sappey a l'après-midi, et il l'a réellement.</p>
-      <p>Et la tension que cela crée complique le verdict : <strong>les mois où le vélo est le plus pénible au Sappey sont exactement ceux où l'on y respire et vit le mieux.</strong> À l'inverse, l'hiver où Veurey permet de rouler tous les jours est aussi celui où l'on pédale sous le couvercle.</p>
+      <h3>Le soleil : même durée, pas les mêmes heures</h3>
+      <p>Autre surprise. Au cœur de l'hiver, les deux villages reçoivent <strong>exactement la même durée de soleil</strong> — un peu plus de six heures. Ce qui change, c'est l'horaire. La crête du Saint-Eynard mange la matinée du Sappey, mais lui laisse tout l'après-midi. À Veurey, c'est l'inverse trait pour trait : le soleil se lève tôt sur la vallée ouverte, puis disparaît tôt derrière les falaises du Vercors.</p>
     </div>
 
-    <h3>L'été — la cuvette dans l'autre sens</h3>
+    <figure>
+      <div class="chart-frame">
+        <svg viewBox="0 0 900 210" role="img" aria-labelledby="sol-title sol-desc">
+          <title id="sol-title">Les heures de soleil au cœur de l'hiver</title>
+          <desc id="sol-desc">Au solstice d'hiver, Veurey est au soleil de 7 h 48 à 14 h 03 et Le Sappey de 10 h 01 à 16 h 16 : même durée de six heures et quart, sur des moitiés opposées de la journée.</desc>
+
+          <rect class="fig-track" x="60" y="60" width="797" height="28" rx="4"></rect>
+          <rect class="fig-track" x="60" y="118" width="797" height="28" rx="4"></rect>
+
+          <rect class="fig-bar-v" x="171" y="60" width="385" height="28" rx="4"></rect>
+          <rect class="fig-bar-s" x="307" y="118" width="385" height="28" rx="4"></rect>
+
+          <text class="fig-name v" x="60" y="50">Veurey · soleil de 7 h 48 à 14 h 03</text>
+          <text class="fig-name s" x="60" y="108">Le Sappey · soleil de 10 h 01 à 16 h 16</text>
+
+          <line class="fig-axis" x1="60" y1="170" x2="857" y2="170"></line>
+          <text class="fig-tick" x="60" y="190" text-anchor="middle">6 h</text>
+          <text class="fig-tick" x="183" y="190" text-anchor="middle">8 h</text>
+          <text class="fig-tick" x="306" y="190" text-anchor="middle">10 h</text>
+          <text class="fig-tick" x="429" y="190" text-anchor="middle">12 h</text>
+          <text class="fig-tick" x="552" y="190" text-anchor="middle">14 h</text>
+          <text class="fig-tick" x="674" y="190" text-anchor="middle">16 h</text>
+          <text class="fig-tick" x="797" y="190" text-anchor="middle">18 h</text>
+        </svg>
+        <div class="chart-key">
+          <div><i class="k-v"></i><span>Veurey : le soleil du matin, de 7 h 48 à 14 h 03</span></div>
+          <div><i class="k-s"></i><span>Le Sappey : le soleil de l'après-midi, de 10 h 01 à 16 h 16</span></div>
+          <div><i class="k-g"></i><span>Même durée dans les deux cas : 6 h 16</span></div>
+        </div>
+      </div>
+      <figcaption>Durées calculées par ciel clair au 21 décembre, d'après le relief qui entoure chaque village. Ce sont des heures solaires : à l'horloge, il faut ajouter environ 25 minutes. Elles ignorent les nuages et le brouillard — qui sont précisément ce qui sépare vraiment les deux communes.</figcaption>
+    </figure>
 
     <div class="col">
-      <p>Le même relief qui piège l'air froid en hiver piège la chaleur en été. Grenoble est une cuvette, et c'est le second paramètre de qualité de vie où l'écart entre les deux communes est massif — cette fois sans ambiguïté.</p>
-      <p>Les chiffres de l'agglomération donnent le ton. La moyenne des maximales de juillet est de 28,6 °C, mais ce sont les extrêmes qui comptent : <strong>le 23 juillet 2019, la station des Frênes a relevé 43 °C</strong>. L'étude universitaire consacrée à cet été-là mesure des écarts atteignant 7 °C entre deux stations distantes de 6,5 km, et surtout <strong>44 nuits tropicales</strong> — des nuits où la température ne descend pas sous 20 °C — sur un site urbain dense, contre <strong>seulement 4</strong> sur une station périurbaine de référence.</p>
-      <p>Ce dernier chiffre est le plus utile ici, parce qu'il sépare deux effets qu'on confond souvent. La chaleur diurne appartient à la vallée entière : quand il fait 40 °C à Grenoble, il fait 40 °C à Veurey. Mais la chaleur nocturne, elle, appartient à la ville dense — et Veurey, village de 1 400 habitants couvert à 69 % de forêt, au bord de l'Isère, ressemble beaucoup plus à la station périurbaine à 4 nuits tropicales qu'au centre-ville à 44.</p>
-      <p><strong>Le Sappey joue dans une autre catégorie.</strong> L'air se refroidit d'environ 0,65 °C par 100 mètres d'altitude ; les 800 mètres qui séparent le village du fond de vallée valent donc à peu près <strong>5 °C d'écart, en permanence</strong>. Le jour où Grenoble affiche 38 °C, Le Sappey est autour de 33 °C. Et à 1 014 m, la nuit tropicale est un phénomène pratiquement inconnu : c'est là que se joue le vrai confort d'un mois d'août.</p>
-      <p>La perspective n'arrange rien. Les auteurs de l'étude estiment que les conditions de 2019 correspondent à un été ordinaire vers 2050, et que la canicule de 2003 deviendrait la norme en fin de siècle dans le scénario le plus pessimiste. Sur la durée d'un projet de vie, <strong>800 mètres d'altitude sont une police d'assurance contre la chaleur</strong>, et c'est probablement l'argument le plus solide en faveur du Sappey dans tout ce rapport.</p>
-      <p>Un mot sur le trajet, puisque c'est le sujet du document. Les deux itinéraires souffrent en canicule, mais pas de la même façon : monter 800 mètres à 35 °C est éprouvant même en électrique — les moteurs se brident quand ils chauffent —, mais on arrive dans un air à 30 °C. À Veurey, l'effort est nul mais le trajet se fait le long d'une digue, milieu ouvert et probablement peu ombragé, à l'heure la plus chaude, pour rentrer dans une maison de fond de vallée. Le degré d'ombre réel de la voie verte est à vérifier sur place : c'est ce qui décidera du confort de juillet.</p>
+      <p>Pour quelqu'un qui part à 7 h 30 et rentre à 18 h 30, la remarque est cruelle des deux côtés : en décembre, tout le soleil de la journée tombe pendant les heures de bureau. <strong>La différence se joue le week-end</strong> — matinées lumineuses à Veurey, fins d'après-midi lumineuses au Sappey.</p>
+      <p>Et tout cela suppose un ciel clair. Sous le couvercle, l'ensoleillement du fond de vallée tombe à zéro quel que soit le relief. Veurey a le matin sur le papier, mais c'est justement le moment où le brouillard est le plus dense. Le Sappey a l'après-midi, et il l'a réellement.</p>
+
+      <h3>L'été : cinq degrés de moins, en permanence</h3>
+      <p>Le même relief qui piège l'air froid en hiver piège la chaleur en été. Grenoble est une cuvette, et le 23 juillet 2019 il y a fait <strong>43 °C</strong>.</p>
+      <p>La chaleur de la journée appartient à toute la vallée : quand il fait 40 °C à Grenoble, il fait 40 °C à Veurey. Mais 800 mètres plus haut, il fait environ <strong>5 °C de moins, en permanence</strong> — et surtout, les nuits y restent fraîches. Dans l'agglomération, l'été 2019 a compté 44 nuits sans descendre sous 20 °C en zone urbaine dense, contre 4 seulement sur un site plus vert en périphérie. Veurey, village de 1 400 habitants largement boisé au bord de l'Isère, ressemble beaucoup plus au second cas qu'au premier — mais Le Sappey, lui, ignore le phénomène.</p>
+      <p>La perspective n'arrange rien : les chercheurs qui ont étudié cet été-là estiment qu'il correspondra à <strong>un été ordinaire vers 2050</strong>. Sur la durée d'un projet de vie, 800 mètres d'altitude sont une assurance contre la chaleur — c'est probablement l'argument le plus solide en faveur du Sappey dans tout ce document.</p>
+
       <div class="note">
-        <span class="tag">Symétrie</span>
-        Le rapport se retourne donc deux fois. En hiver, Le Sappey offre l'air et la lumière mais complique le trajet. En été, il offre 5 °C de moins et des nuits fraîches, et complique encore le trajet. Le vélo est le seul domaine où Veurey gagne toute l'année — et il faut décider du poids qu'on lui donne.
+        <span class="tag">La tension à accepter</span>
+        Les mois où le vélo est le plus pénible au Sappey sont exactement ceux où l'on y respire et vit le mieux. À l'inverse, l'hiver où Veurey permet de rouler tous les jours est aussi celui où l'on pédale sous le couvercle.
       </div>
     </div>
+  </section>
 
-    <h3>Ce que cela coûte à la location</h3>
+  <hr class="rule">
+
+  <section id="budget">
+    <div class="head">
+      <div class="kicker"><span class="num">08</span>Budget</div>
+      <h2>Ce que ça coûte</h2>
+    </div>
 
     <div class="stats">
       <div class="stat">
-        <div class="label">Loyer appartement, €/m²/mois</div>
+        <div class="label">Loyer, par m² et par mois</div>
         <div class="pair">
           <span class="v-s">Le Sappey · 17,8 €</span>
           <span class="v-v">Veurey · 14,4 €</span>
@@ -1239,65 +1030,93 @@
         <div class="delta">Environ 24 % de plus au Sappey.</div>
       </div>
       <div class="stat">
-        <div class="label">Un appartement de 40 m²</div>
+        <div class="label">Pour un 40 m²</div>
         <div class="pair">
           <span class="v-s">Le Sappey · ≈ 712 €</span>
           <span class="v-v">Veurey · ≈ 576 €</span>
         </div>
-        <div class="delta">Soit 136 € par mois, ou près de 1 630 € par an, d'écart de loyer.</div>
+        <div class="delta">136 € par mois d'écart, soit près de 1 630 € par an.</div>
       </div>
       <div class="stat">
         <div class="label">La fourchette au Sappey</div>
         <div class="pair">
-          <span class="v-s">40 m² : 490 à 1 180 €</span>
-          <span class="v-v">soit 12,3 à 29,4 €/m²</span>
+          <span class="v-s">490 à 1 180 € pour 40 m²</span>
         </div>
-        <div class="delta">Une amplitude du simple au double : c'est la marque d'un marché étroit.</div>
+        <div class="delta">Du simple au double : c'est la marque d'un marché très étroit.</div>
       </div>
     </div>
 
     <div class="col">
-      <p>Estimations d'août 2026. Sur les maisons, l'écart est du même ordre mais un peu plus marqué : 19,0 €/m²/mois au Sappey contre 14,8 € à Veurey, soit environ 28 %.</p>
-      <p>Une réserve importante accompagne ces chiffres : <strong>le marché locatif du Sappey est étroit et partiellement touristique</strong> — la location saisonnière de ski tire les valeurs vers le haut et explique l'amplitude de la fourchette. Le chiffre de Veurey, adossé à un marché résidentiel ordinaire, est le plus fiable des deux. Sur un si petit volume d'annonces, le loyer réellement obtenu dépendra surtout du bien trouvé.</p>
-      <p>À cet écart de loyer s'ajoute la voiture d'hiver évoquée plus haut. Additionnés, les quelque 1 600 € annuels de loyer supplémentaire et le coût de possession d'un véhicule équipé montagne constituent le vrai prix du cadre de vie au Sappey — un prix qui peut parfaitement valoir la peine, mais qu'il vaut mieux avoir chiffré avant de signer un bail.</p>
+      <p>Ces chiffres datent d'août 2026. Ils demandent une réserve : le marché locatif du Sappey est petit et en partie touristique — la location de ski tire les prix vers le haut et explique l'amplitude. Sur si peu d'annonces, le loyer réellement obtenu dépendra surtout du bien trouvé.</p>
+      <p>À cet écart s'ajoute <strong>la voiture d'hiver</strong>. Au Sappey, le plan B suppose un véhicule équipé pour la montagne à l'année ; à Veurey, il suppose un abonnement de transport. Additionnés, les 1 600 € de loyer supplémentaire et le coût d'une voiture forment le vrai prix du cadre de vie — un prix qui peut parfaitement valoir la peine, mais qu'il vaut mieux avoir calculé avant de signer.</p>
     </div>
   </section>
 
   <hr class="rule">
 
-  <section id="reserves">
+  <section id="choisir">
     <div class="head">
-      <div class="kicker"><span class="num">10</span>Honnêteté méthodologique</div>
-      <h2>Ce que ce rapport n'a pas pu vérifier</h2>
+      <div class="kicker"><span class="num">09</span>Décision</div>
+      <h2>Comment choisir</h2>
     </div>
+
+    <div class="choose">
+      <div class="card v">
+        <div class="place">Choisissez Veurey si…</div>
+        <p class="verdict-line">Le vélo doit être un moyen de transport, pas un loisir.</p>
+        <ul>
+          <li>Vous voulez pouvoir partir à vélo un mardi de janvier sans y penser.</li>
+          <li>Vous préférez ne pas dépendre d'une voiture — bus, tram et train sont là.</li>
+          <li>Le budget compte : environ 1 600 € de loyer de moins par an, et pas de voiture montagne.</li>
+          <li>Vous aimez l'idée d'un club le soir, de l'escalade à dix minutes et d'une voie verte pour rouler en famille le dimanche.</li>
+        </ul>
+      </div>
+
+      <div class="card s">
+        <div class="place">Choisissez Le Sappey si…</div>
+        <p class="verdict-line">Vous choisissez d'abord un endroit où vivre.</p>
+        <ul>
+          <li>La chaleur d'été vous inquiète : cinq degrés de moins et des nuits fraîches, c'est structurel et ça ne se renégocie pas.</li>
+          <li>Le gris de la vallée en hiver vous pèse, et vous préférez être au-dessus.</li>
+          <li>Le ski de fond au bout de la rue et les sommets de Chartreuse depuis la porte comptent plus que quatre mois de vélo.</li>
+          <li>Vous assumez une voiture équipée montagne et un village où tout le reste se fait en descendant.</li>
+        </ul>
+      </div>
+
+      <div class="card n">
+        <div class="place">Et une troisième piste</div>
+        <p class="verdict-line">Saint-Égrève, Sassenage ou Noyarey.</p>
+        <ul>
+          <li>Même vallée et même voie verte que Veurey, mais <strong>deux fois plus près</strong> de la gare : 8 à 12 km.</li>
+          <li>Le tram et le train en plus, la Chartreuse comme le Vercors accessibles depuis la porte.</li>
+          <li>On y perd le village. On y gagne un trajet de 30 minutes praticable 365 jours par an — exactement ce que promet le vélo quotidien, et ce que Le Sappey ne peut pas tenir.</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="col">
-      <p>Sept points méritent une vérification sur place avant de trancher, parce qu'ils peuvent modifier la conclusion :</p>
-      <ol>
-        <li><strong>L'éclairage de la voie verte de Veurey.</strong> Dix-sept kilomètres de digue non éclairée en janvier, ce n'est pas la même chose que le tracé sur le papier. À aller voir un soir d'hiver.</li>
-        <li><strong>Le déneigement de la voie verte.</strong> Il n'est en général pas prioritaire : un jour de neige, les routes sont dégagées et la digue peut rester impraticable. Rare en fond de vallée, mais à confirmer auprès de la Métropole.</li>
-        <li><strong>Le comptage de trafic sur la RD512.</strong> Aucun chiffre officiel de véhicules/jour n'a pu être obtenu ; l'appréciation du trafic repose sur la fonction de la route et sur les témoignages de cyclistes.</li>
-        <li><strong>L'emport du vélo dans les bus M réso.</strong> A priori limité aux vélos pliants, mais la règle exacte est à confirmer auprès du réseau — elle change beaucoup l'intérêt du plan B depuis Le Sappey.</li>
-        <li><strong>Les tarifs de stationnement.</strong> Ni le prix du parking automobile à la gare de Grenoble, ni celui du P+R Grand Sablon, ni le tarif de la consigne vélo n'ont pu être obtenus de source directe. À demander aux exploitants — ce sont des coûts mensuels, donc structurants.</li>
-        <li><strong>L'itinéraire cyclable réel Veurey → gare de Voreppe.</strong> Les cinq kilomètres à vol d'oiseau en deviennent douze par la route ; il faut vérifier sur le terrain s'il existe un franchissement de l'Isère plus direct pour un vélo.</li>
-        <li><strong>La précision des horizons solaires.</strong> Les profils ont été mesurés sur cinq azimuts et cinq distances par commune, depuis un point unique de chaque village — pas depuis le logement, qui peut gagner ou perdre une heure selon son exposition. Le calcul ignore aussi la réfraction atmosphérique et la végétation. Les heures données sont justes à une dizaine de minutes près, et servent à comparer les deux communes, pas à planifier une journée.</li>
-      </ol>
-      <p>Les horaires de la ligne 62 cités ici sont ceux en vigueur depuis le 30 novembre 2024, et le calendrier de la ZFE peut encore évoluer : les deux sont à revalider avant décision.</p>
+      <p>Un dernier point valable partout ici : la Chartreuse est l'un des massifs les plus arrosés de France. Sur l'année, ce sera plus souvent la pluie que la neige qui décidera de sortir le vélo.</p>
     </div>
   </section>
 
   <hr class="rule">
 
-  <section id="reco">
+  <section id="verifier">
     <div class="head">
-      <div class="kicker"><span class="num">11</span>Recommandation</div>
-      <h2>Et une troisième option qu'il serait dommage d'écarter</h2>
+      <div class="kicker"><span class="num">10</span>Avant de signer</div>
+      <h2>À vérifier sur place</h2>
     </div>
     <div class="col">
-      <p>Un mot avant de conclure, parce que la section précédente change la couleur de tout ce qui précède. Ce rapport a été construit autour d'une question de mobilité, et sur ce terrain Veurey gagne nettement. Mais on n'achète pas un trajet, on loue un lieu de vie — et sur ce second terrain, l'air d'hiver, la lumière, le ski au départ de la porte, le parc naturel et surtout les 5 °C de moins en été penchent franchement de l'autre côté. Si le vélo n'est qu'un critère parmi d'autres et non le critère structurant, la conclusion peut légitimement s'inverser.</p>
-      <p>Et si l'on regarde à dix ou vingt ans plutôt qu'à un an, l'argument de la chaleur pèse de plus en plus lourd. Le trajet à vélo, lui, peut se réorganiser : télétravail, bus, changement d'employeur, aménagement cyclable futur. L'altitude d'un logement, elle, ne se renégocie pas.</p>
-      <p>Entre les deux, il existe un compromis rarement envisagé : <strong>Saint-Égrève, Sassenage ou Noyarey</strong>. Même axe que Veurey, même voie verte, mais deux fois moins loin de la gare — 8 à 12 km — avec le tram et le TER en plus, et la Chartreuse ou le Vercors accessibles depuis la porte.</p>
-      <p>On y perd le village de montagne. On y gagne un trajet de 30 minutes praticable 365 jours par an, ce qui est exactement ce que promet le vélotaf et ce que Le Sappey ne peut pas tenir.</p>
-      <p>Dernier point à ne pas sous-estimer, valable partout ici : la Chartreuse est l'un des massifs les plus arrosés de France. Sur l'année, ce sera plus souvent la pluie que la neige qui décidera de sortir le vélo.</p>
+      <p>Six points peuvent changer la conclusion, et aucun ne se vérifie depuis un écran.</p>
+      <ul>
+        <li><strong>L'éclairage de la voie verte de Veurey</strong>, un soir de janvier. Dix-sept kilomètres de digue non éclairée, ce n'est pas la même chose que le trait sur la carte.</li>
+        <li><strong>Son déneigement.</strong> Les voies vertes sont rarement prioritaires : un jour de neige, les routes sont dégagées et la digue peut rester impraticable.</li>
+        <li><strong>Les horaires réels des bus depuis Veurey.</strong> L'offre existe ; son niveau de service, lui, se lit sur une fiche horaire.</li>
+        <li><strong>La place de vélo à la gare de Grenoble.</strong> Le parking sécurisé compte 1 146 places et se réserve — à engager avant même le déménagement. Son tarif est à demander, comme celui du parking relais.</li>
+        <li><strong>Le logement au Sappey.</strong> Marché étroit, loyers du simple au double : c'est le bien trouvé qui décidera, pas la moyenne.</li>
+        <li><strong>La zone inondable à Veurey</strong>, à vérifier parcelle par parcelle avant tout achat.</li>
+      </ul>
+      <p>Enfin, les horaires de bus cités datent de fin 2024 et les règles d'accès des voitures à Grenoble évoluent : les deux sont à revalider avant décision.</p>
     </div>
   </section>
 
@@ -1306,47 +1125,41 @@
   <section id="sources" class="sources">
     <div class="head">
       <div class="kicker">Sources</div>
-      <h2>Références consultées</h2>
+      <h2>Ce sur quoi ce document s'appuie</h2>
     </div>
     <ol>
-      <li><a href="https://www.cols-cyclisme.com/chartreuse/france/col-de-vence-depuis-grenoble-c430.htm">Col de Vence depuis Grenoble — cols-cyclisme.com</a> · profil, distance, pentes</li>
-      <li><a href="https://www.petitbraquet.fr/cols/col-de-vence-depuis-grenoble">Col de Vence depuis Grenoble — Petit Braquet</a> · temps d'ascension, saison conseillée</li>
-      <li><a href="https://www.sappey-mairie.fr/le-deneigement/">Le déneigement — Mairie du Sappey-en-Chartreuse</a></li>
-      <li><a href="https://www.sappey-mairie.fr/se-deplacer/">Se déplacer — Mairie du Sappey-en-Chartreuse</a></li>
-      <li><a href="https://www.skiinfo.fr/alpes-du-nord/le-sappey-en-chartreuse/historique-enneigement">Historique d'enneigement du Sappey — Skiinfo</a></li>
-      <li><a href="https://www.grenoblealpesmetropole.fr/cms_viewFile.php?idtf=4002&amp;path=Horaires-Ligne-N62-MReso.pdf">Horaires de la ligne 62 — M réso (PDF)</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Le_Sappey-en-Chartreuse">Le Sappey-en-Chartreuse — Wikipédia</a> · altitude, population</li>
-      <li><a href="https://www.af3v.org/les-voies-vertes/voies/157-v64-veloroute-trans-alpes-de-veurey-voroize-a-sechilienne/">Véloroute V64, Veurey-Voroize → Vif — AF3V</a> · revêtement, continuité</li>
-      <li><a href="https://www.citycle.com/60975-a-la-decouverte-de-la-vallee-de-lisere-a-velo-sur-la-v63/">La vallée de l'Isère à vélo, V63 — Citycle</a></li>
-      <li><a href="https://www.veurey-voroize.fr/vivre-a-veurey/deplacements/">Déplacements et mobilité — Mairie de Veurey-Voroize</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Veurey-Voroize">Veurey-Voroize — Wikipédia</a> · altitude, population</li>
-      <li><a href="https://meteo-express.com/climat-grenoble/">Climat de Grenoble, normales 1991-2020 — Météo Express</a></li>
-      <li><a href="https://www.bycommute.com/en/parking-velo-gare-grenoble">Parking vélo de la gare de Grenoble</a></li>
-      <li><a href="https://www.grenoblealpesmetropole.fr/actualite/250/45-la-tronche-la-route-de-chartreuse-en-travaux-a-partir-du-13-mai.htm">Route de Chartreuse, travaux — Grenoble-Alpes Métropole</a></li>
-      <li><a href="https://pneus-hiver-obligatoires.fr/isere/sappey-en-chartreuse/">Loi Montagne au Sappey-en-Chartreuse</a> · périmètre et période des équipements obligatoires</li>
-      <li><a href="https://www.grenoblealpesmetropole.fr/133-la-zfe-pour-les-voitures-particulieres.htm">La ZFE pour les voitures particulières — Grenoble-Alpes Métropole</a></li>
-      <li><a href="https://www.grenoble.fr/lieu/147/137-parking-relais-grand-sablon.htm">Parking relais Grand Sablon — Ville de Grenoble</a></li>
-      <li><a href="https://smmag.fr/se-deplacer/intermodalite/">Intermodalité et parkings-relais — SMMAG</a></li>
-      <li><a href="https://fr.wikipedia.org/wiki/Ligne_B_du_tramway_de_Grenoble">Ligne B du tramway de Grenoble — Wikipédia</a> · fréquences et stations</li>
-      <li><a href="https://www.ter.sncf.com/auvergne-rhone-alpes/se-deplacer/gares/voreppe-87747337">Gare de Voreppe — TER Auvergne-Rhône-Alpes</a></li>
-      <li><a href="https://www.ter.sncf.com/auvergne-rhone-alpes/se-deplacer/gares/saint-egreve-saint-robert-87747352">Gare de Saint-Égrève – Saint-Robert — TER Auvergne-Rhône-Alpes</a></li>
-      <li><a href="https://www.horaires-de-trains.fr/horaires-Voreppe-Grenoble.html">Horaires Voreppe → Grenoble</a> · temps de parcours</li>
-      <li><a href="https://www.fne-aura.org/actualites/isere/inversion-thermique-et-pollution-atmospherique-une-liaison-dangereuse/">Inversion thermique et pollution atmosphérique — FNE Isère</a></li>
-      <li><a href="https://climatology.edpsciences.org/articles/climat/full_html/2020/01/climat202017012/climat202017012.html">Les deux épisodes caniculaires de l'été 2019 à Grenoble — revue <em>Climatologie</em></a> · records, îlot de chaleur, nuits tropicales, projections</li>
-      <li><a href="https://www.annuaire-mairie.fr/mairie-le-sappey-en-chartreuse.html">Le Sappey-en-Chartreuse — Annuaire des mairies</a> · équipements, superficie, densité</li>
-      <li><a href="https://www.annuaire-mairie.fr/mairie-veurey-voroize.html">Veurey-Voroize — Annuaire des mairies</a> · équipements, patrimoine</li>
-      <li><a href="https://www.sappey-mairie.fr/la-station-de-ski-de-fond/">La station de ski de fond — Mairie du Sappey-en-Chartreuse</a></li>
-      <li><a href="https://sitdl.lametro.fr/urba_posplu/PLUI_GAM/1_Rapport_de_presentation/RP_T4_livrets_communaux/Livret_Veurey_Voroize.pdf">Livret communal de Veurey-Voroize — PLUi de Grenoble-Alpes Métropole (PDF)</a></li>
-      <li><a href="https://www.isere.gouv.fr/Actions-de-l-Etat/Risques-majeurs/Collectivites/Risques-naturels/Plans-de-Prevention-des-Risques-naturels-et-inondations-PPRN-PPRI/Plan-de-Prevention-du-Risque-Inondation-PPRI/04-PPRI-ISERE-AVAL">PPRI Isère aval — Préfecture de l'Isère</a></li>
-      <li><a href="https://www.meilleursagents.com/prix-immobilier/le-sappey-en-chartreuse-38700/">Loyers au Sappey-en-Chartreuse — MeilleursAgents, août 2026</a></li>
-      <li><a href="https://www.meilleursagents.com/prix-immobilier/veurey-voroize-38113/">Loyers à Veurey-Voroize — MeilleursAgents, août 2026</a></li>
+      <li><a href="https://www.sappey-mairie.fr/faire-ses-courses/">Faire ses courses au Sappey</a> et <a href="https://www.sappey-mairie.fr/la-station-de-ski-de-fond/">la station de ski de fond</a> — Mairie du Sappey-en-Chartreuse</li>
+      <li><a href="https://www.sappey-mairie.fr/se-deplacer/">Se déplacer</a> et <a href="https://www.sappey-mairie.fr/le-deneigement/">le déneigement</a> — Mairie du Sappey-en-Chartreuse</li>
+      <li><a href="https://www.ici.fr/emissions/mon-quartier-mon-village/le-sappey-en-chartreuse-un-village-qui-cultive-sport-artisanat-et-convivialite-3363423">Le Sappey-en-Chartreuse, un village qui cultive sport, artisanat et convivialité</a> — ICI · La Bonne Fabrique, L'Arti'Som, le pain collectif</li>
+      <li><a href="https://www.annuaire-mairie.fr/association-le-sappey-en-chartreuse.html">Les 32 associations du Sappey</a> et <a href="https://www.annuaire-mairie.fr/mairie-le-sappey-en-chartreuse.html">les équipements de la commune</a> — Annuaire des mairies</li>
+      <li><a href="https://www.chartreuse-tourisme.com/en/offers/le-sappey-en-chartreuse-chamechaude-nordic-area-le-sappey-en-chartreuse-en-2716723/">Domaine nordique de Chamechaude</a> — Chartreuse Tourisme · pistes, secteurs, liaisons</li>
+      <li><a href="https://www.sappey-mairie.fr/transports-scolaires/">Transports scolaires</a> — Mairie du Sappey · collège Jules Flandrin, lycée du Grésivaudan</li>
+      <li><a href="https://www.veurey-voroize.fr/associations/sport/">Associations sportives</a> et <a href="https://www.veurey-voroize.fr/associations/culture-loisirs/">culture &amp; loisirs</a> — Mairie de Veurey-Voroize</li>
+      <li><a href="https://www.veurey-voroize.fr/vivre-a-veurey/commerces-et-services/">Commerces et services</a> et <a href="https://www.veurey-voroize.fr/vivre-a-veurey/deplacements/">déplacements</a> — Mairie de Veurey-Voroize</li>
+      <li><a href="https://oblyk.org/escalade-autour-de/veurey-voroize">Sites d'escalade autour de Veurey-Voroize</a> — Oblyk</li>
+      <li><a href="https://college-lycee.com/college/Veurey-Voroize-38540">Collège de secteur de Veurey-Voroize</a> — collège Alexander Fleming, Sassenage</li>
+      <li><a href="https://www.af3v.org/les-voies-vertes/voies/157-v64-veloroute-trans-alpes-de-veurey-voroize-a-sechilienne/">Véloroute des digues de l'Isère</a> — AF3V · revêtement et continuité</li>
+      <li><a href="https://www.cols-cyclisme.com/chartreuse/france/col-de-vence-depuis-grenoble-c430.htm">Col de Vence depuis Grenoble</a> — cols-cyclisme.com · profil et pentes</li>
+      <li><a href="https://www.skiinfo.fr/alpes-du-nord/le-sappey-en-chartreuse/historique-enneigement">Historique d'enneigement du Sappey</a> — Skiinfo</li>
+      <li><a href="https://www.grenoblealpesmetropole.fr/cms_viewFile.php?idtf=4002&amp;path=Horaires-Ligne-N62-MReso.pdf">Horaires de la ligne 62</a> — M réso (PDF)</li>
+      <li><a href="https://pneus-hiver-obligatoires.fr/isere/sappey-en-chartreuse/">Équipements hivernaux obligatoires au Sappey</a> · périmètre et période</li>
+      <li><a href="https://www.grenoble.fr/lieu/147/137-parking-relais-grand-sablon.htm">Parking relais Grand Sablon</a> — Ville de Grenoble</li>
+      <li><a href="https://www.ter.sncf.com/auvergne-rhone-alpes/se-deplacer/gares/voreppe-87747337">Gare de Voreppe</a> — TER Auvergne-Rhône-Alpes</li>
+      <li><a href="https://www.bycommute.com/en/parking-velo-gare-grenoble">Parking vélo de la gare de Grenoble</a> · nombre de places</li>
+      <li><a href="https://www.fne-aura.org/actualites/isere/inversion-thermique-et-pollution-atmospherique-une-liaison-dangereuse/">Inversion thermique et pollution atmosphérique</a> — FNE Isère</li>
+      <li><a href="https://climatology.edpsciences.org/articles/climat/full_html/2020/01/climat202017012/climat202017012.html">Les deux épisodes caniculaires de l'été 2019 à Grenoble</a> — revue <em>Climatologie</em> · records, nuits chaudes, projections</li>
       <li><a href="https://www.annuaire-mairie.fr/ensoleillement-grenoble.html">Ensoleillement de Grenoble</a> · heures de soleil par mois</li>
-      <li><a href="https://www.opentopodata.org/">OpenTopoData</a> · sondages du modèle numérique de terrain européen EU-DEM 25 m, pour l'horizon de Veurey</li>
+      <li><a href="https://www.opentopodata.org/">OpenTopoData</a> · relevés du relief autour des deux villages, pour les heures de soleil</li>
+      <li><a href="https://sitdl.lametro.fr/urba_posplu/PLUI_GAM/1_Rapport_de_presentation/RP_T4_livrets_communaux/Livret_Veurey_Voroize.pdf">Livret communal de Veurey-Voroize</a> — PLUi de Grenoble-Alpes Métropole (PDF)</li>
+      <li><a href="https://www.isere.gouv.fr/Actions-de-l-Etat/Risques-majeurs/Collectivites/Risques-naturels/Plans-de-Prevention-des-Risques-naturels-et-inondations-PPRN-PPRI/Plan-de-Prevention-du-Risque-Inondation-PPRI/04-PPRI-ISERE-AVAL">Plan de prévention du risque d'inondation Isère aval</a> — Préfecture de l'Isère</li>
+      <li><a href="https://www.meilleursagents.com/prix-immobilier/le-sappey-en-chartreuse-38700/">Loyers au Sappey</a> et <a href="https://www.meilleursagents.com/prix-immobilier/veurey-voroize-38113/">loyers à Veurey</a> — MeilleursAgents, août 2026</li>
+      <li><a href="https://fr.wikipedia.org/wiki/Le_Sappey-en-Chartreuse">Le Sappey-en-Chartreuse</a> et <a href="https://fr.wikipedia.org/wiki/Veurey-Voroize">Veurey-Voroize</a> — Wikipédia · altitude, superficie, population</li>
     </ol>
   </section>
 
-  <p class="foot">Rapport établi en août 2026 à partir de sources publiques. Les distances vers la gare, les temps de trajet, les consommations de batterie et le calendrier de praticabilité sont des estimations construites à partir de ces sources, signalées comme telles dans le texte. Les horaires et les montants d'aide sont à revalider auprès des opérateurs avant toute décision.</p>
+  <p class="foot">Document établi en août 2026 à partir de sources publiques. Les distances, les temps de trajet et le calendrier de praticabilité du vélo sont des estimations construites à partir de ces sources, signalées comme telles dans le texte. Les horaires et les tarifs sont à revalider auprès des opérateurs avant toute décision.</p>
 
 </div>
+
 </body>
 </html>
