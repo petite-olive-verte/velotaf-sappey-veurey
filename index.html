@@ -512,6 +512,10 @@
   .fig-dot-s { fill: var(--sappey); }
   .fig-dot-v { fill: var(--veurey); }
   .fig-tick { font-family: var(--mono); font-size: 13px; fill: var(--muted); }
+  .fig-lab { font-family: var(--mono); font-size: 13px; fill: var(--muted); }
+  .fig-lab.s { fill: var(--sappey); }
+  .fig-lab.v { fill: var(--veurey); }
+  .fig-val { font-family: var(--mono); font-size: 13px; fill: var(--ink-2); }
   .fig-note { font-family: var(--mono); font-size: 12px; fill: var(--muted); }
   .fig-name { font-family: var(--sans); font-size: 15px; font-weight: 600; }
   .fig-name.s { fill: var(--sappey); }
@@ -576,12 +580,13 @@
       <li><a href="#trajet"><span class="n">02</span><span class="t">Le trajet, côte à côte</span></a></li>
       <li><a href="#annee"><span class="n">03</span><span class="t">L'année en un coup d'œil</span></a></li>
       <li><a href="#planb"><span class="n">04</span><span class="t">Les jours sans vélo</span></a></li>
-      <li><a href="#porte"><span class="n">05</span><span class="t">Ce qu'on a à sa porte</span></a></li>
-      <li><a href="#faire"><span class="n">06</span><span class="t">Ce qu'on peut y faire</span></a></li>
-      <li><a href="#climat"><span class="n">07</span><span class="t">Le climat, l'argument caché</span></a></li>
-      <li><a href="#budget"><span class="n">08</span><span class="t">Ce que ça coûte</span></a></li>
-      <li><a href="#choisir"><span class="n">09</span><span class="t">Comment choisir</span></a></li>
-      <li><a href="#verifier"><span class="n">10</span><span class="t">À vérifier sur place</span></a></li>
+      <li><a href="#voiture"><span class="n">05</span><span class="t">Le jour où vous prenez la voiture</span></a></li>
+      <li><a href="#porte"><span class="n">06</span><span class="t">Ce qu'on a à sa porte</span></a></li>
+      <li><a href="#faire"><span class="n">07</span><span class="t">Ce qu'on peut y faire</span></a></li>
+      <li><a href="#climat"><span class="n">08</span><span class="t">Le climat, l'argument caché</span></a></li>
+      <li><a href="#budget"><span class="n">09</span><span class="t">Ce que ça coûte</span></a></li>
+      <li><a href="#choisir"><span class="n">10</span><span class="t">Comment choisir</span></a></li>
+      <li><a href="#verifier"><span class="n">11</span><span class="t">À vérifier sur place</span></a></li>
       <li><a href="#sources"><span class="n">—</span><span class="t">Sources</span></a></li>
     </ol>
   </nav>
@@ -780,13 +785,97 @@
         <div class="place">Le Sappey</div>
         <p>Huit bus par jour en semaine, premier départ à 7 h 09, dernier retour à 18 h 04, environ 24 minutes jusqu'à Grenoble puis le tram. Ça couvre des horaires de bureau classiques — mais rater le dernier bus n'est pas un petit incident.</p>
         <p>Le reste du temps, c'est la voiture. Et pas n'importe laquelle : la commune est en zone montagne, <strong>pneus hiver ou chaînes obligatoires du 1<sup>er</sup> novembre au 31 mars</strong>.</p>
-        <p>L'astuce à connaître : descendre en voiture jusqu'au parking relais du Grand Sablon, au pied de la montée, puis prendre le tram B — un passage toutes les 4 à 5 minutes jusqu'à la gare.</p>
+        <p>La variante souvent citée : descendre au parking-relais du Grand Sablon, au pied de la montée, puis prendre le tram B jusqu'à la gare. Elle est moins évidente qu'il n'y paraît — la section suivante la chiffre.</p>
       </div>
       <div class="card v">
         <div class="place">Veurey-Voroize</div>
         <p>On est sur un réseau ordinaire : deux lignes de bus vers le tram, un car régional, et la gare de Voreppe à côté — <strong>9 minutes de train jusqu'à Grenoble</strong>, le trajet le plus rapide de tout ce document.</p>
-        <p>Une réserve, tout de même : cette gare se mérite. Il faut traverser l'Isère, ce qui fait 12 km par la route là où la carte en montre 5 à vol d'oiseau. Elle ne se prend pas à pied depuis Veurey.</p>
+        <p>Cette gare est à 4,4 km du bourg — cinq minutes de voiture. Et ce n'est pas la seule : la ligne de bus 51 mène à Saint-Égrève, qui a elle aussi une gare et le tram E. La section suivante détaille ces temps.</p>
       </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="voiture">
+    <div class="head">
+      <div class="kicker"><span class="num">05</span>Les bouchons</div>
+      <h2>Le jour où vous prenez la voiture</h2>
+    </div>
+    <div class="col">
+      <p>Quatre mois par an au Sappey, quelques jours par an à Veurey, le vélo ne passe pas. Reste la question qu'on se pose vraiment ce matin-là : combien de temps, et où est le premier transport en commun ?</p>
+    </div>
+
+    <figure>
+      <div class="chart-frame">
+        <svg viewBox="0 0 900 310" role="img" aria-labelledby="tc-title tc-desc">
+          <title id="tc-title">Temps de voiture pour rejoindre un transport en commun</title>
+          <desc id="tc-desc">Depuis Veurey, quatre points d'accès aux transports en commun sont à moins de 12 minutes de voiture, dont la gare de Voreppe à 5 minutes. Depuis Le Sappey, le premier tram fréquent est à 19 minutes.</desc>
+
+          <text class="fig-lab v" x="250" y="56" text-anchor="end">Veurey → train à Voreppe</text>
+          <rect class="fig-bar-v" x="260" y="40" width="122" height="22" rx="3"></rect>
+          <text class="fig-val" x="392" y="56">5 min</text>
+
+          <text class="fig-lab v" x="250" y="90" text-anchor="end">Veurey → tram E au Fontanil</text>
+          <rect class="fig-bar-v" x="260" y="74" width="195" height="22" rx="3"></rect>
+          <text class="fig-val" x="465" y="90">8 min</text>
+
+          <text class="fig-lab v" x="250" y="124" text-anchor="end">Veurey → train à Saint-Égrève</text>
+          <rect class="fig-bar-v" x="260" y="108" width="220" height="22" rx="3"></rect>
+          <text class="fig-val" x="490" y="124">9 min</text>
+
+          <text class="fig-lab v" x="250" y="158" text-anchor="end">Veurey → tram A à Fontaine</text>
+          <rect class="fig-bar-v" x="260" y="142" width="293" height="22" rx="3"></rect>
+          <text class="fig-val" x="563" y="158">12 min</text>
+
+          <text class="fig-lab v" x="250" y="192" text-anchor="end">Veurey → gare de Grenoble</text>
+          <rect class="fig-bar-v" x="260" y="176" width="342" height="22" rx="3"></rect>
+          <text class="fig-val" x="612" y="192">14 min</text>
+
+          <text class="fig-lab s" x="250" y="226" text-anchor="end">Le Sappey → tram B au Grand Sablon</text>
+          <rect class="fig-bar-s" x="260" y="210" width="464" height="22" rx="3"></rect>
+          <text class="fig-val" x="734" y="226">19 min</text>
+
+          <text class="fig-lab s" x="250" y="260" text-anchor="end">Le Sappey → gare de Grenoble</text>
+          <rect class="fig-bar-s" x="260" y="244" width="512" height="22" rx="3"></rect>
+          <text class="fig-val" x="782" y="260">21 min</text>
+
+          <line class="fig-axis" x1="260" y1="282" x2="870" y2="282"></line>
+          <text class="fig-tick" x="260" y="302" text-anchor="middle">0</text>
+          <text class="fig-tick" x="382" y="302" text-anchor="middle">5</text>
+          <text class="fig-tick" x="504" y="302" text-anchor="middle">10</text>
+          <text class="fig-tick" x="626" y="302" text-anchor="middle">15</text>
+          <text class="fig-tick" x="748" y="302" text-anchor="middle">20</text>
+          <text class="fig-tick" x="870" y="302" text-anchor="middle">25 min</text>
+        </svg>
+        <div class="chart-key">
+          <div><i class="k-v"></i><span>Veurey : train à Voreppe 5 min · tram E au Fontanil 8 min · train à Saint-Égrève 9 min · tram A à Fontaine 12 min · gare de Grenoble 14 min</span></div>
+          <div><i class="k-s"></i><span>Le Sappey : tram B au Grand Sablon 19 min · gare de Grenoble 21 min</span></div>
+        </div>
+      </div>
+      <figcaption>Temps de voiture mesurés sur le réseau routier réel, circulation fluide, depuis le centre de chaque village. Ce sont des planchers : ils ne tiennent pas compte des bouchons, dont il est question juste après.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>Le contraste est net. <strong>Depuis Veurey, quatre points d'accès aux transports en commun sont à moins d'un quart d'heure</strong>, dont un train à cinq minutes. Depuis Le Sappey, il n'y en a qu'un, et il est à dix-neuf minutes — presque aussi loin que la gare elle-même.</p>
+
+      <h3>Où sont les bouchons</h3>
+      <p>Grenoble est la douzième ville la plus embouteillée de France. Un conducteur y perd en moyenne <strong>81 heures par an</strong> aux heures de pointe, et un trajet y prend en moyenne 36 % de temps de plus qu'à circulation libre.</p>
+      <p>Le problème, c'est que <strong>le point noir de l'agglomération se trouve précisément sur le trajet de Veurey</strong>. Le matin, en direction de Grenoble, l'autoroute A48 bouchonne entre le péage de Voreppe et l'échangeur de Saint-Égrève. Le phénomène est si régulier qu'une voie de covoiturage y a été créée en 2020 sur huit kilomètres, avec contrôle automatique depuis 2024. Dans l'autre sens, le soir, il n'y a pas de bouchon récurrent : c'est un embouteillage d'aller, pas de retour.</p>
+      <p>Côté Sappey, il n'existe aucun comptage public de la route de Chartreuse. Ce n'est pas un axe de rabattement domicile-travail comme l'A48 : son trafic culmine les week-ends d'hiver, quand la Chartreuse se remplit. Le ralentissement se joue sur les derniers kilomètres, à l'entrée de La Tronche et de Grenoble, là où tout le monde converge.</p>
+
+      <div class="note">
+        <span class="tag">Bon à savoir</span>
+        La voie de covoiturage de l'A48 est ouverte aux voitures transportant au moins deux personnes, aux taxis et aux véhicules électriques. Pour qui part à deux ou roule en électrique, c'est un vrai contournement du bouchon — mais l'expérimentation ne court que jusqu'à fin août 2026, et sa suite n'est pas décidée.
+      </div>
+
+      <h3>Le train échappe aux bouchons, la voiture non</h3>
+      <p>C'est ce qui rend l'option ferroviaire décisive à Veurey, et c'est l'erreur de la première version de ce document, qui affirmait que la gare de Voreppe se méritait. Elle est en réalité à <strong>4,4 km du bourg, cinq minutes de voiture</strong>, et le train met neuf minutes jusqu'à Grenoble. Porte à porte, un peu plus d'un quart d'heure — <strong>et ce quart d'heure ne bouge pas quand l'A48 est saturée</strong>, alors que la voiture, elle, s'allonge.</p>
+      <p>Second accès, tout aussi utile : la gare de Saint-Égrève, à neuf minutes de voiture, avec six minutes de train jusqu'à Grenoble et une vingtaine de trains par jour. Elle a l'avantage d'être desservie depuis le bourg par la ligne de bus 51, ce qui permet de s'y rendre sans voiture du tout.</p>
+
+      <h3>Le paradoxe du parking-relais</h3>
+      <p>Au Sappey, la solution classique — descendre au parking-relais du Grand Sablon puis prendre le tram B — demande dix-neuf minutes de voiture, puis une quinzaine de minutes de tram, soit environ <strong>trente-cinq minutes</strong>. Conduire directement jusqu'à la gare en prend vingt et une.</p>
+      <p>Autrement dit, hors bouchons, le parking-relais fait perdre du temps. Il en fait gagner uniquement les jours où la ville est saturée — et il fait surtout économiser un stationnement quotidien en centre-ville, ce qui reste son vrai intérêt. Le tram B passe toutes les quatre à cinq minutes de 7 h à 19 h et va directement à la gare, sans changement.</p>
     </div>
   </section>
 
@@ -794,7 +883,7 @@
 
   <section id="porte">
     <div class="head">
-      <div class="kicker"><span class="num">05</span>Le quotidien</div>
+      <div class="kicker"><span class="num">06</span>Le quotidien</div>
       <h2>Ce qu'on a à sa porte</h2>
     </div>
     <div class="col">
@@ -817,9 +906,9 @@
 
 
       <div class="mrow">
-        <div class="mlabel">Médecin, pharmacie</div>
-        <div class="mcell s"><span class="who">Le Sappey</span>Aucun dans la commune<span class="away">il faut descendre à Grenoble ou à Corenc</span></div>
-        <div class="mcell v"><span class="who">Veurey</span>Aucun dans la commune<span class="away">Sassenage ou Saint-Égrève, à plat</span></div>
+        <div class="mlabel">Se soigner</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Trois médecins généralistes, une infirmière, kinés et ostéopathe — mais pas de pharmacie<span class="away">sur place · pharmacie dans la vallée</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Trois médecins généralistes, cabinet d'infirmières, podologue, orthophonistes, psychologue — mais pas de pharmacie<span class="away">sur place · pharmacie à Noyarey, ≈ 3 km</span></div>
       </div>
 
       <div class="mrow">
@@ -850,7 +939,7 @@
 
   <section id="faire">
     <div class="head">
-      <div class="kicker"><span class="num">06</span>Le temps libre</div>
+      <div class="kicker"><span class="num">07</span>Le temps libre</div>
       <h2>Ce qu'on peut y faire</h2>
     </div>
     <div class="col">
@@ -920,7 +1009,7 @@
 
   <section id="climat">
     <div class="head">
-      <div class="kicker"><span class="num">07</span>Le climat</div>
+      <div class="kicker"><span class="num">08</span>Le climat</div>
       <h2>L'argument caché</h2>
     </div>
     <div class="col">
@@ -1025,7 +1114,7 @@
 
   <section id="budget">
     <div class="head">
-      <div class="kicker"><span class="num">08</span>Budget</div>
+      <div class="kicker"><span class="num">09</span>Budget</div>
       <h2>Ce que ça coûte</h2>
     </div>
 
@@ -1065,7 +1154,7 @@
 
   <section id="choisir">
     <div class="head">
-      <div class="kicker"><span class="num">09</span>Décision</div>
+      <div class="kicker"><span class="num">10</span>Décision</div>
       <h2>Comment choisir</h2>
     </div>
 
@@ -1112,7 +1201,7 @@
 
   <section id="verifier">
     <div class="head">
-      <div class="kicker"><span class="num">10</span>Avant de signer</div>
+      <div class="kicker"><span class="num">11</span>Avant de signer</div>
       <h2>À vérifier sur place</h2>
     </div>
     <div class="col">
@@ -1124,6 +1213,7 @@
         <li><strong>La place de vélo à la gare de Grenoble.</strong> Le parking sécurisé compte 1 146 places et se réserve — à engager avant même le déménagement. Son tarif est à demander, comme celui du parking relais.</li>
         <li><strong>Le logement au Sappey.</strong> Marché étroit, loyers du simple au double : c'est le bien trouvé qui décidera, pas la moyenne.</li>
         <li><strong>La zone inondable à Veurey</strong>, à vérifier parcelle par parcelle avant tout achat.</li>
+        <li><strong>Les temps de trajet aux heures de pointe.</strong> Tous les temps de voiture donnés ici sont mesurés à circulation fluide. Le seul test qui compte, c'est de refaire les deux itinéraires un mardi matin de novembre, à 7 h 30.</li>
       </ul>
       <p>Enfin, les horaires de bus cités datent de fin 2024 et les règles d'accès des voitures à Grenoble évoluent : les deux sont à revalider avant décision.</p>
     </div>
@@ -1148,6 +1238,14 @@
       <li><a href="https://oblyk.org/escalade-autour-de/veurey-voroize">Sites d'escalade autour de Veurey-Voroize</a> — Oblyk</li>
       <li><a href="https://college-lycee.com/college/Veurey-Voroize-38540">Collège de secteur de Veurey-Voroize</a> — collège Alexander Fleming, Sassenage</li>
       <li><a href="https://www.af3v.org/les-voies-vertes/voies/157-v64-veloroute-trans-alpes-de-veurey-voroize-a-sechilienne/">Véloroute des digues de l'Isère</a> — AF3V · revêtement et continuité</li>
+      <li><a href="https://www.veurey-voroize.fr/vivre-a-veurey/sante/">Santé à Veurey-Voroize</a> et <a href="https://www.sappey-mairie.fr/se-soigner/">Se soigner au Sappey</a> — sites des deux mairies · médecins et paramédicaux présents</li>
+      <li><a href="https://www.tomtom.com/traffic-index/grenoble-traffic/">TomTom Traffic Index — Grenoble</a> et <a href="https://www.connexionfrance.com/news/ranking-shows-which-cities-in-france-are-suffering-the-most-and-least-from-traffic-jams/765838">le classement des villes françaises</a> · congestion, heures perdues</li>
+      <li><a href="https://www.a480rondeau.fr/a-la-une/une-voie-dediee-au-co-voiturage-ouvre-sur-la48/">La voie de covoiturage de l'A48</a> et <a href="https://www.saint-egreve.fr/cadre-de-vie/securite-et-prevention/voie-reservee-au-covoiturage-2296.html">ses conditions d'accès</a> · section, ayants droit, contrôle</li>
+      <li><a href="https://en.wikipedia.org/wiki/A48_autoroute">Autoroute A48</a> — Wikipédia · bouchon récurrent du matin entre Voreppe et Saint-Égrève</li>
+      <li><a href="https://fr.wikipedia.org/wiki/Ligne_B_du_tramway_de_Grenoble">Ligne B</a> et <a href="https://fr.wikipedia.org/wiki/Ligne_E_du_tramway_de_Grenoble">ligne E du tramway de Grenoble</a> — Wikipédia · stations et fréquences</li>
+      <li><a href="https://www.ter.sncf.com/auvergne-rhone-alpes/se-deplacer/gares/saint-egreve-saint-robert-87747352">Gare de Saint-Égrève – Saint-Robert</a> — TER Auvergne-Rhône-Alpes</li>
+      <li><a href="https://www.grenoble-tourisme.com/en/catalog/detail/p-r-le-fontanil-cornillon-palluel-4875717/">Parking-relais de Palluel, Le Fontanil-Cornillon</a> · places et horaires</li>
+      <li><a href="https://www.openstreetmap.org/">OpenStreetMap</a> via <a href="https://project-osrm.org/">OSRM</a> · distances et temps de voiture à circulation fluide, calculés depuis le centre de chaque village</li>
       <li><a href="https://www.cols-cyclisme.com/chartreuse/france/col-de-vence-depuis-grenoble-c430.htm">Col de Vence depuis Grenoble</a> — cols-cyclisme.com · profil et pentes</li>
       <li><a href="https://www.skiinfo.fr/alpes-du-nord/le-sappey-en-chartreuse/historique-enneigement">Historique d'enneigement du Sappey</a> — Skiinfo</li>
       <li><a href="https://www.grenoblealpesmetropole.fr/cms_viewFile.php?idtf=4002&amp;path=Horaires-Ligne-N62-MReso.pdf">Horaires de la ligne 62</a> — M réso (PDF)</li>
