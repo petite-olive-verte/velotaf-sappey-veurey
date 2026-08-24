@@ -249,7 +249,7 @@
 
   table {
     width: 100%;
-    min-width: 40rem;
+    min-width: 33rem;
     border-collapse: collapse;
     font-family: var(--sans);
     font-size: .9rem;
@@ -500,9 +500,9 @@
   }
 
   /* ---------- figures simplifiées ---------- */
-  .fig-fog { fill: var(--ink); opacity: .13; }
+  .fig-fog { fill: var(--ink-2); opacity: .2; }
   .fig-lid { stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
-  .fig-ground { fill: var(--ink); opacity: .09; }
+  .fig-ground { fill: var(--ink); opacity: .07; }
   .fig-ground-line { fill: none; stroke: var(--line-strong); stroke-width: 1.4; stroke-linejoin: round; }
   .fig-sun { fill: none; stroke: var(--warn); stroke-width: 1.6; }
   .fig-axis { stroke: var(--line-strong); stroke-width: 1; }
@@ -522,8 +522,27 @@
   .card.n .place { color: var(--muted); }
   .card .verdict-line { font-family: var(--sans); font-weight: 600; font-size: 1rem; line-height: 1.3; }
 
+
   /* ---------- matrice « à sa porte » ---------- */
-  td .away { display: block; font-family: var(--mono); font-size: .74rem; color: var(--muted); margin-top: .2rem; }
+  .matrix { border: 1px solid var(--line); border-radius: 3px; background: var(--surface); overflow: hidden; }
+  .mhead, .mrow { display: grid; grid-template-columns: 10.5rem 1fr 1fr; gap: 0 1.1rem; padding: .85rem 1.1rem; border-bottom: 1px solid var(--line); }
+  .mrow:last-child { border-bottom: 0; }
+  .mhead { font-family: var(--mono); font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line-strong); }
+  .mhead .h-s { color: var(--sappey); }
+  .mhead .h-v { color: var(--veurey); }
+  .mlabel { font-family: var(--sans); font-size: .9rem; font-weight: 500; color: var(--ink-2); }
+  .mcell { font-family: var(--sans); font-size: .92rem; line-height: 1.5; }
+  .mcell .who { display: none; }
+  .mcell .away { display: block; font-family: var(--mono); font-size: .72rem; color: var(--muted); margin-top: .25rem; }
+
+  @media (max-width: 46rem) {
+    .mhead { display: none; }
+    .mrow { grid-template-columns: 1fr; gap: .6rem; padding: 1rem 1.1rem; }
+    .mlabel { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .mcell .who { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .15rem; }
+    .mcell.s .who { color: var(--sappey); }
+    .mcell.v .who { color: var(--veurey); }
+  }
 </style>
 </head>
 <body>
@@ -782,54 +801,54 @@
       <p>Deux villages de taille comparable, mais l'un est accroché à 1 000 mètres et l'autre posé au bord d'une vallée équipée. Voilà ce que ça change, ligne par ligne.</p>
     </div>
 
-    <div class="table-wrap">
-      <table>
-        <caption>Ce qui est sur place, et ce qui demande un déplacement</caption>
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Le Sappey</th>
-            <th scope="col">Veurey-Voroize</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Les courses</th>
-            <td>Épicerie locale et bio, deux marchés par semaine, pain au levain fait par un collectif d'habitants<span class="away">sur place</span></td>
-            <td>Épicerie avec point relais poste et pain, station-service et tabac<span class="away">sur place · supermarchés à Sassenage et Saint-Égrève</span></td>
-          </tr>
-          <tr>
-            <th scope="row">L'école</th>
-            <td>Maternelle et primaire, mutualisées avec Sarcenas<span class="away">sur place</span></td>
-            <td>Maternelle et primaire, avec cantine et périscolaire<span class="away">sur place</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Le collège</th>
-            <td>Jules Flandrin, à Corenc, par bus scolaire<span class="away">en bas de la montée</span></td>
-            <td>Alexander Fleming, à Sassenage<span class="away">quelques kilomètres de plat</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Médecin, pharmacie</th>
-            <td>Aucun dans la commune<span class="away">il faut descendre à Grenoble ou à Corenc</span></td>
-            <td>Aucun dans la commune<span class="away">Sassenage ou Saint-Égrève, à plat</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Sport en salle</th>
-            <td>Pas de gymnase — salle des fêtes, MJC, et le sport se fait dehors<span class="away">piscine à Meylan, ≈ 6 km</span></td>
-            <td>Salle des fêtes avec dojo, tennis, terrains de sport, clubs de village<span class="away">piscine des Bannettes, ≈ 3 km</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Nature au départ de la maison</th>
-            <td>Ski de fond, raquettes et sentiers de Chartreuse depuis la place du village</td>
-            <td>L'Isère, la voie verte, les falaises et le vallon des Écouges</td>
-          </tr>
-          <tr>
-            <th scope="row">Sortir le soir</th>
-            <td>Restaurants du village, sinon Grenoble<span class="away">20 min de voiture, et la remontée</span></td>
-            <td>Sassenage, Saint-Égrève, Grenoble<span class="away">bus et tram, sans voiture</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="matrix">
+      <div class="mhead">
+        <div></div>
+        <div class="h-s">Le Sappey</div>
+        <div class="h-v">Veurey-Voroize</div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Les courses</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Épicerie locale et bio, deux marchés par semaine, pain au levain fait par un collectif d'habitants<span class="away">sur place</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Épicerie avec point relais poste et pain, station-service et tabac<span class="away">sur place · supermarchés à Sassenage et Saint-Égrève</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">L'école</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Maternelle et primaire, mutualisées avec Sarcenas<span class="away">sur place</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Maternelle et primaire, avec cantine et périscolaire<span class="away">sur place</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Le collège</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Jules Flandrin, à Corenc, par bus scolaire<span class="away">en bas de la montée</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Alexander Fleming, à Sassenage<span class="away">quelques kilomètres de plat</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Médecin, pharmacie</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Aucun dans la commune<span class="away">il faut descendre à Grenoble ou à Corenc</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Aucun dans la commune<span class="away">Sassenage ou Saint-Égrève, à plat</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Sport en salle</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Pas de gymnase — une salle des fêtes, une MJC, et le sport se fait dehors<span class="away">piscine à Meylan, ≈ 6 km</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Salle des fêtes avec dojo, tennis, terrains de sport, clubs de village<span class="away">piscine des Bannettes, ≈ 3 km</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Nature au départ de la maison</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Ski de fond, raquettes et sentiers de Chartreuse depuis la place du village</div>
+        <div class="mcell v"><span class="who">Veurey</span>L'Isère, la voie verte, les falaises et le vallon des Écouges</div>
+      </div>
+
+      <div class="mrow">
+        <div class="mlabel">Sortir le soir</div>
+        <div class="mcell s"><span class="who">Le Sappey</span>Les restaurants du village, sinon Grenoble<span class="away">20 min de voiture, et la remontée</span></div>
+        <div class="mcell v"><span class="who">Veurey</span>Sassenage, Saint-Égrève, Grenoble<span class="away">en bus et tram, sans voiture</span></div>
+      </div>
     </div>
 
     <div class="col">
